@@ -11,3 +11,21 @@
 .caro{
     background-color: grey;
 }
+
+img {
+    width: 20%
+}
+
+.scrolling-wrapper {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+}
+
+.card {
+    display: inline;
+}
+
+li { 
+    margin: 0 3rem
+}

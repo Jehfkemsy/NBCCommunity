@@ -12,7 +12,9 @@
       "required": true
     },
     "responses": {
-      "type": ["object"],
+      "type": [
+        "object"
+      ],
       "required": true
     },
     "description": {
@@ -28,7 +30,9 @@
       "required": true
     },
     "seasons": {
-      "type": ["object"],
+      "type": [
+        "object"
+      ],
       "required": true
     },
     "id": {

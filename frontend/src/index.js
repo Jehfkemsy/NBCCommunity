@@ -9,6 +9,7 @@ import { Provider } from "react-redux";
 import thunk from "redux-thunk";
 import RootR from "./store/reducer/RootR";
 
+import 'bootstrap/dist/css/bootstrap.min.css';
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const store = createStore(

@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import ShowCard from './../../components/ShowCard/ShowCard'
 import ContentA from './../../store/action/ContentA'
-import style from './style.css';
+import './style.css';
+
 
 /**
  * Description:
@@ -23,7 +24,7 @@ class HomePC extends Component {
 
   render() {
     return (
-      <div >
+      <div className= "background1">
         <ShowCard 
           image="http://media.mlive.com/chronicle/entertainment_impact/photo/11781702-large.jpg"
           title="The voice"

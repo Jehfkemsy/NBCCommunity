@@ -1,9 +1,3 @@
-import React, { Component } from 'react';
-import AuthA from './../../store/action/AuthA';
-import { Container, Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
-
-import { connect } from 'react-redux';
-
 /**
  * Description:
  * This is the default route. Prompts user to login or signup.
@@ -32,11 +26,35 @@ import { connect } from 'react-redux';
  *  - Showcase the app
  *  - Display error message on failed login / signup
  */
+
+import React, { Component } from 'react';
+import AuthA from './../../store/action/AuthA';
+import {
+  Container,
+  Row,
+  Col,
+  Form,
+  Label,
+  Input,
+  Button,
+  Modal,
+  ModalHeader,
+  ModalBody,
+  ModalFooter
+} from 'reactstrap';
+
+import { connect } from 'react-redux';
+import './style.css';
+
 class LandingPC extends Component {
-  state = {
-    user: '',
-    password: ''
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      modal: false
+    };
+
+    this.toggle = this.toggle.bind(this);
+  }
 
   onUserChange = event => {
     this.setState({ user: event.target.value });
@@ -51,7 +69,8 @@ class LandingPC extends Component {
       email: this.state.user,
       password: this.state.password
     };
-    this.props.authFn.login(data);
+    // this.props.authFn.login(data);
+    console.log(data);
   };
 
   signup = () => {
@@ -60,45 +79,103 @@ class LandingPC extends Component {
       username: this.state.user,
       password: this.state.password
     };
-    this.props.authFn.signup(data);
+    // this.props.authFn.signup(data);
+    console.log(data);
   };
+
+  toggle() {
+    this.setState({
+      modal: !this.state.modal
+    });
+  }
 
   render() {
     return (
-      <Container>
-        <form>
-          <div className="form-group">
-            <label for="exampleInputEmail1">Email address</label>
-            <input
-              type="email"
-              className="form-control"
-              id="exampleInputEmail1"
-              aria-describedby="emailHelp"
-              placeholder="Enter email"
-            />
-            <small id="emailHelp" className="form-text text-muted">
-              We'll never share your email with anyone else.
-            </small>
-          </div>
-          <div className="form-group">
-            <label for="exampleInputPassword1">Password</label>
-            <input
-              type="password"
-              className="form-control"
-              id="exampleInputPassword1"
-              placeholder="Password"
-            />
-          </div>
-          <div className="form-check">
-            <input type="checkbox" className="form-check-input" id="exampleCheck1" />
-            <label className="form-check-label" for="exampleCheck1">
-              Check me out
-            </label>
-          </div>
-          <button type="submit" className="btn btn-primary">
-            Submit
-          </button>
-        </form>
+      <Container className="background">
+        <Row>
+          <Col sm={{ size: 6, offset: 3 }}>
+            <Form>
+              <div className="form-group text-left">
+                <Label htmlFor="login_email">Email address</Label>
+                <Input
+                  type="email"
+                  className="form-control"
+                  id="login_email"
+                  placeholder="Enter email"
+                  onChange={this.onUserChange}
+                />
+                <small id="emailHelp" className="form-text text-muted">
+                  We'll never share your email with anyone else.
+                </small>
+              </div>
+              <div className="form-group text-left">
+                <label htmlFor="exampleInputPassword1">Password</label>
+                <input
+                  type="password"
+                  className="form-control"
+                  id="login_password"
+                  placeholder="Password"
+                  onChange={this.onPWChange}
+                />
+              </div>
+              <div className="form-check text-left pl-3">
+                <input type="checkbox" className="form-check-input" id="email_remember" />
+                <label className="form-check-label" htmlFor="email_remember">
+                  Check me out
+                </label>
+              </div>
+              <Button onClick={this.login} block color="primary" className="mt-4">
+                Login
+              </Button>
+            </Form>
+            <hr />
+            <Button block color="info" onClick={this.toggle} className="mt-5">
+              Sign Up
+            </Button>
+            <Modal
+              size="lg"
+              isOpen={this.state.modal}
+              toggle={this.toggle}
+              className={this.props.className}
+            >
+              <ModalHeader toggle={this.toggle}>Sign Up </ModalHeader>
+              <ModalBody>
+                <form>
+                  <div className="form-group text-left">
+                    <label htmlFor="exampleInputEmail1">Email address</label>
+                    <input
+                      type="email"
+                      className="form-control"
+                      id="exampleInputEmail1"
+                      aria-describedby="emailHelp"
+                      placeholder="Enter email"
+                    />
+                    <small id="emailHelp" className="form-text text-muted">
+                      We'll never share your email with anyone else.
+                    </small>
+                  </div>
+                  <div className="form-group text-left">
+                    <label htmlFor="exampleInputPassword1">Password</label>
+                    <input
+                      type="password"
+                      className="form-control"
+                      id="exampleInputPassword1"
+                      placeholder="Password"
+                    />
+                  </div>
+                </form>
+              </ModalBody>
+              <ModalFooter>
+                <Button color="primary" onClick={this.signup}>
+                  Submit
+                </Button>{' '}
+                <Button color="secondary" onClick={this.toggle}>
+                  Cancel
+                </Button>
+              </ModalFooter>
+            </Modal>
+          </Col>
+        </Row>
       </Container>
     );
   }

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import AuthA from "./../../store/action/AuthA";
+import AuthA from "../../store/action/AuthA";
 
 import { connect } from "react-redux";
 

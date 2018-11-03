@@ -49,6 +49,10 @@
     "id": {
       "type": "number",
       "required": true
+    },
+    "totalRatings": {
+      "type": "number",
+      "required": true
     }
   },
   "validations": [],

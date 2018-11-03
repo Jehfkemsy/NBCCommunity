@@ -29,9 +29,9 @@
   left: 0;
 }
 
-nav.navbar.navbar-light.bg-light.justify-content-between {
+/* nav.navbar.navbar-light.bg-light.justify-content-between {
   display: none;
-}
+} */
 
 .btn-primary {
   background-color: #400095 !important;
@@ -57,7 +57,8 @@ nav.navbar.navbar-light.bg-light.justify-content-between {
   width: 33.5rem;
 }
 
-button.btn {
+button.btn-primary,
+button.btn-info {
   padding: 17px 0;
 }
 

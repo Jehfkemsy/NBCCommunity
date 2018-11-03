@@ -1,13 +1,21 @@
-
-.card{
-    margin: 0 auto;
-    margin-top:20px;
+.hero {
+  background-color: grey;
 }
 
-.hero{
-    background-color: grey;
+.caro {
+  background-color: grey;
 }
 
-.caro{
-    background-color: grey;
+.scrolling-wrapper {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+}
+
+.card {
+  display: inline;
+}
+
+li {
+  margin: 0 3rem;
 }

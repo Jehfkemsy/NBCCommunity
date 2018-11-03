@@ -1,19 +1,9 @@
-import axios from 'axios';
+// import axios from 'axios';
+import channelShowsSearch from './../../utils/channelShowsSearch';
 
 const ResponseA = (dispatch) => {
     return {
-        getResponse: () => {
-            axios.get()
-            // axios.get(api_mock)
-            .then(res => {
-                console.log(res)
-                dispatch({type:"GET_CONTENT", data: res.data})
-            })
-            .catch(err => {
-                console.log(err)
-                dispatch({type:"GET_CONTENT_ERR"})
-            });   
-        }
+        getResponse: channelShowsSearch
     }
 }
 

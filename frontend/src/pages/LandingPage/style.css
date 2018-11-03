@@ -1,6 +1,6 @@
-@import url("https://fonts.googleapis.com/css?family=Chivo");
+@import url('https://fonts.googleapis.com/css?family=Chivo');
 .font {
-  font-family: "Chivo", sans-serif;
+  font-family: 'Chivo', sans-serif;
 }
 .containerL {
   display: flex;
@@ -13,4 +13,18 @@
   display: inline-block;
   margin-left: 15%;
   margin-bottom: 30px;
+}
+
+.background {
+  opacity: 0.2;
+  z-index: -5;
+  height: 100vh;
+  width: 100vw;
+  background-image: url(https://images.unsplash.com/photo-1534834128485-00d164a7cf47?ixlib=rb-0.3.5…EyMDd9&s=e41d164…&auto=format&fit=crop&w=3300&q=80);
+  -webkit-filter: blur(1px);
+  filter: blur(1px);
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
 }

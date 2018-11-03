@@ -1,7 +1,8 @@
-import React, { Component } from "react";
-import AuthA from "./../../store/action/AuthA";
+import React, { Component } from 'react';
+import AuthA from './../../store/action/AuthA';
+import { Container, Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 
-import { connect } from "react-redux";
+import { connect } from 'react-redux';
 
 /**
  * Description:
@@ -33,8 +34,8 @@ import { connect } from "react-redux";
  */
 class LandingPC extends Component {
   state = {
-    user: "",
-    password: ""
+    user: '',
+    password: ''
   };
 
   onUserChange = event => {
@@ -64,24 +65,41 @@ class LandingPC extends Component {
 
   render() {
     return (
-      <div>
+      <Container>
         <form>
           <div className="form-group">
             <label for="exampleInputEmail1">Email address</label>
-            <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"/>
-            <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
+            <input
+              type="email"
+              className="form-control"
+              id="exampleInputEmail1"
+              aria-describedby="emailHelp"
+              placeholder="Enter email"
+            />
+            <small id="emailHelp" className="form-text text-muted">
+              We'll never share your email with anyone else.
+            </small>
           </div>
           <div className="form-group">
             <label for="exampleInputPassword1">Password</label>
-            <input type="password" className="form-control" id="exampleInputPassword1" placeholder="Password"/>
+            <input
+              type="password"
+              className="form-control"
+              id="exampleInputPassword1"
+              placeholder="Password"
+            />
           </div>
           <div className="form-check">
-            <input type="checkbox" className="form-check-input" id="exampleCheck1"/>
-            <label className="form-check-label" for="exampleCheck1">Check me out</label>
+            <input type="checkbox" className="form-check-input" id="exampleCheck1" />
+            <label className="form-check-label" for="exampleCheck1">
+              Check me out
+            </label>
           </div>
-          <button type="submit" className="btn btn-primary">Submit</button>
-        </form>  
-      </div>
+          <button type="submit" className="btn btn-primary">
+            Submit
+          </button>
+        </form>
+      </Container>
     );
   }
 }

@@ -20,6 +20,7 @@ class App extends Component {
             <div style={margin}>
               <Switch>
                 <Route exact path="/" component={landingP} />
+                <Route path="/home" component={HomePC} />
               </Switch>
             </div>
           </div>

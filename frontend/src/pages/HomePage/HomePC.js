@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import MediaCard from './../../components/MediaCard/MediaCard'
+import ShowCard from './../../components/ShowCard/ShowCard'
 import ContentA from './../../store/action/ContentA'
 
 /**
@@ -23,7 +23,7 @@ class HomePC extends Component {
   render() {
     return (
       <div>
-        <MediaCard 
+        <ShowCard 
           image="http://media.mlive.com/chronicle/entertainment_impact/photo/11781702-large.jpg"
           title="The voice"
           description={this.props.contents}

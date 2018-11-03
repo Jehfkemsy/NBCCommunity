@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import NavbarC from './components/Navbar/NavbarC';
-import HomePC from './pages/Home/HomePC'
+import HomePC from './pages/HomePage/HomePC'
 
 import './App.css';
 

@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import NavbarC from './components/Navbar/NavbarC';
-import HomePC from './pages/HomePage/HomePC'
+import HomePC from './pages/HomePage/HomePC';
+import landingP from './pages/LandingPage/LandingP';
 import './App.css';
 import ResponseCard from './components/RespnseCard/ResponseCard';
 
 class App extends Component {
   render() {
     let margin = {
-      marginTop: "10%"
+      marginTop: '10%'
     };
     return (
       <div>
@@ -18,13 +19,12 @@ class App extends Component {
             <ResponseCard />
             <div style={margin}>
               <Switch>
-                <Route exact path="/" component={HomePC} />
+                <Route exact path="/" component={landingP} />
               </Switch>
             </div>
           </div>
         </BrowserRouter>
       </div>
-
     );
   }
 }

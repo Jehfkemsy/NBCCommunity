@@ -1,0 +1,56 @@
+{
+  "name": "response",
+  "plural": "responses",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "rating": {
+      "type": "number",
+      "required": true,
+      "default": 0
+    },
+    "avgRating": {
+      "type": "number",
+      "required": true,
+      "default": 0
+    },
+    "userId": {
+      "type": "string",
+      "required": true
+    },
+    "comment": {
+      "type": "string",
+      "required": true
+    },
+    "image": {
+      "type": "string",
+      "required": true
+    },
+    "video": {
+      "type": "string",
+      "required": true
+    },
+    "views": {
+      "type": "number",
+      "required": true
+    },
+    "type": {
+      "type": "string",
+      "required": true
+    },
+    "show": {
+      "type": "string",
+      "required": true
+    },
+    "decorations": {
+      "type": "boolean"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

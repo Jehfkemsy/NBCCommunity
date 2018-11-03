@@ -91,7 +91,7 @@ class LandingPC extends Component {
 
   render() {
     return (
-      <Container className="background">
+      <Container className="">
         <Row>
           <Col sm={{ size: 6, offset: 3 }}>
             <Form>
@@ -176,6 +176,7 @@ class LandingPC extends Component {
             </Modal>
           </Col>
         </Row>
+        <div className="background" />
       </Container>
     );
   }

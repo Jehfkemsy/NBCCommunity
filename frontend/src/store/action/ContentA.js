@@ -40,8 +40,8 @@ const ContentA = (dispatch) => {
 
                     console.log(show)
                     shows.push(show)
-                    if(channel === 'oxygen'){
-                        dispatch({type:"GET_OXYGEN", data: shows})
+                    if(channel === 'syfy'){
+                        dispatch({type:"GET_SYFY", data: shows})
                     }
                     else if(channel === 'telemundo'){
                         dispatch({type:"GET_TELEMUNDO", data: shows})

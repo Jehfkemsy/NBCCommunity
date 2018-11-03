@@ -20,8 +20,8 @@ import Caro from './Carousel';
  *  -- token
  */
 class HomePC extends Component {
-  componentDidMount() {
-    this.props.contentFn.getContents();
+  componentWillMount() {
+    this.props.contentFn.getContents('telemundo');
   }
 
   render() {

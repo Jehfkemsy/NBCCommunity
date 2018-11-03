@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import NavbarC from './components/Navbar/NavbarC';
 import HomePC from './pages/HomePage/HomePC';
-import LandingPC from './pages/LandingPage/LandingPC'
+import LandingP from './pages/LandingPage/LandingP'
 
 import './App.css';
 
@@ -18,7 +18,7 @@ class App extends Component {
             <NavbarC />
             <div style={margin}>
               <Switch>
-                <Route exact path="/" component={LandingPC} />
+                <Route exact path="/" component={LandingP} />
                 <Route exact path="/home" component={HomePC} />                            
               </Switch>
             </div>

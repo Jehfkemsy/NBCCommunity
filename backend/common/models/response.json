@@ -45,6 +45,10 @@
     },
     "numRatings": {
       "type": "number"
+    },
+    "id": {
+      "type": "number",
+      "required": true
     }
   },
   "validations": [],

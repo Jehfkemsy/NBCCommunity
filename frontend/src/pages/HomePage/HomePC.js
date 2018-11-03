@@ -1,7 +1,11 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import ShowCard from './../../components/ShowCard/ShowCard'
-import ContentA from './../../store/action/ContentA'
+import ShowCard from './../../components/ShowCard/ShowCard';
+import ContentA from './../../store/action/ContentA';
+import Hero from './Hero';
+import {Container} from 'reactstrap';
+import './style.css';
+import Carousel from './Carousel';
 
 /**
  * Description:
@@ -22,13 +26,11 @@ class HomePC extends Component {
 
   render() {
     return (
-      <div>
-        <ShowCard 
-          image="http://media.mlive.com/chronicle/entertainment_impact/photo/11781702-large.jpg"
-          title="The voice"
-          description={this.props.contents}
-        />
-      </div>
+      <Container>
+        <Hero/>
+        <Carousel/>
+
+      </Container>
     );
   }
 }

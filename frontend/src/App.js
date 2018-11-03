@@ -19,7 +19,7 @@ class App extends Component {
             <ResponseCard />
             <div style={margin}>
               <Switch>
-                <Route exact path="/" component={landingP} />
+                <Route exact path="/" component={HomePC} />
               </Switch>
             </div>
           </div>

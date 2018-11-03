@@ -1,16 +1,13 @@
-.container{
-    margin-top: -10px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    margin-bottom: 20px;
-}
 
 .card{
     margin: 0 auto;
     margin-top:20px;
 }
 
-h1{
-    margin-left: 17px;
+.hero{
+    background-color: grey;
+}
+
+.caro{
+    background-color: grey;
 }

@@ -4,7 +4,6 @@ import React from "react";
 // import PropTypes from "prop-types";
 
 function NavbarV(props) {
-  if (props.auth) {
     return (
       <div>
         <nav className="navbar navbar-light bg-light justify-content-between">
@@ -16,7 +15,6 @@ function NavbarV(props) {
         </nav>
       </div>
     );
-  }
 }
 
 export default NavbarV;

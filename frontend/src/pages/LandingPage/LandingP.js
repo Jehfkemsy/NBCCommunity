@@ -45,7 +45,7 @@ import {
 
 import { connect } from 'react-redux';
 import './style.css';
-import HomePC from '../HomePage/HomePC';
+// import HomePC from '../HomePage/HomePC';
 import { Redirect } from 'react-router-dom';
 import logo from '../../assets/img/NBCcommunity.png';
 
@@ -135,7 +135,7 @@ class LandingPC extends Component {
                   Login
                 </Button>
               </Form>
-              <hr />
+              <hr className="mt-5" />
               <Button block color="info" onClick={this.toggle} className="mt-5">
                 Sign Up
               </Button>

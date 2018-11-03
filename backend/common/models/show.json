@@ -34,6 +34,10 @@
         "object"
       ],
       "required": true
+    },
+    "id": {
+      "type": "number",
+      "required": true
     }
   },
   "validations": [],

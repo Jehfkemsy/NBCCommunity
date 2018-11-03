@@ -56,3 +56,11 @@ nav.navbar.navbar-light.bg-light.justify-content-between {
 .logo {
   width: 33.5rem;
 }
+
+button.btn {
+  padding: 17px 0;
+}
+
+label {
+  color: #400095;
+}

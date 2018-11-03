@@ -42,5 +42,9 @@
   "response": {
     "dataSource": "db",
     "public": true
+  },
+  "UserData": {
+    "dataSource": "db",
+    "public": true
   }
 }

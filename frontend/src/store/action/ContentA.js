@@ -1,25 +1,57 @@
 import axios from 'axios';
 
-let API_URL = "https://stage-api.nbcuni.com/networks/telemundocms/j/posts";
-// let api_test = "https://stage-api.nbcuni.com/networks/usa/j/posts/6a81a0ba-66ee-4e5a-8a8c-7c79a7b6483t"
-let api_mock = "https://private-38408f-concertojsonapi.apiary-mock.com/networks/usa/j/collections/id"
-let config = {
-    "api_key" : "B6JORCtfWI35R457al8N78n64aFSL6JI265U7DrZ"
-};
-
 const ContentA = (dispatch) => {
     return {
-        getContents: () => {
-            axios.get(API_URL,{headers: config})
-            // axios.get(api_mock)
-            .then(res => {
-                console.log(res)
-                dispatch({type:"GET_CONTENT", data: res.data})
+        getContents: (channel) => {
+            axios.get('https://stage-api.nbcuni.com/networks/'+ channel +'/j/shows/',{
+                headers: {
+                    api_key: 'B6JORCtfWI35R457al8N78n64aFSL6JI265U7DrZ'
+                }
             })
-            .catch(err => {
-                console.log(err)
-                dispatch({type:"GET_CONTENT_ERR"})
-            });   
+            .then( Response => {
+                let {data} = Response
+
+                data = data.data;
+
+                let shows = [];  //shows go here
+                
+                data.map(async showData => {
+
+                let imageId = showData.relationships.media.data[0].id;
+
+                let imageObj = await axios.get('https://stage-api.nbcuni.com/networks/'+ channel+'/j/images/'+imageId +'',{
+                    headers: {
+                        api_key: 'B6JORCtfWI35R457al8N78n64aFSL6JI265U7DrZ'
+                    }
+                })
+
+                console.log('added image')
+
+                let imageUrl = imageObj.data.data.attributes.path
+
+                    //individual show data
+
+                    let show = {
+                        id: showData.id,
+                        name: showData.attributes.shortTitle,
+                        description: showData.attributes.description,
+                        image: imageUrl,
+                    }
+
+                    console.log(show)
+                    shows.push(show)
+                    if(channel === 'oxygen'){
+                        dispatch({type:"GET_OXYGEN", data: shows})
+                    }
+                    else if(channel === 'telemundo'){
+                        dispatch({type:"GET_TELEMUNDO", data: shows})
+                    }
+                    else if(channel === 'usa'){
+                        dispatch({type:"GET_USA", data: shows})
+                    }
+                })
+            });
+                
         }
     }
 }

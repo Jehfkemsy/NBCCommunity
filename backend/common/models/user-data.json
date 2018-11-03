@@ -1,0 +1,28 @@
+{
+  "name": "UserData",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "image": {
+      "type": "string",
+      "required": true
+    },
+    "reputation": {
+      "type": "number",
+      "required": true
+    },
+    "favorites": {
+      "type": [
+        "object"
+      ],
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

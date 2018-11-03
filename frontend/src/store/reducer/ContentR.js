@@ -6,11 +6,17 @@ const showInitState = {
   
   function ContentR(state = showInitState, action) {
     switch (action.type) {
-      case "GET_CONTENT": 
+      case "GET_SYFY": 
         return { ...state, 
-          telemundoShows: state.telemundoShows.concat(action.telemundoShows),
-          syfyShows: state.syfyShows.concat(action.syfyShows),
-          usaShows: state.usaShows.concat(action.usaShows)          
+          syfyShows: state.syfyShows.concat(action.syfyShows)                  
+        };
+      case "GET_TELEMUNDO":
+        return { ...state,
+          telemundoShows: state.telemundoShows.concat(action.telemundoShows)
+        };
+      case "GET_USA":
+        return { ...state,
+          usaShows: state.usaShows.concat(action.usaShows) 
         };
       default:
         return state;

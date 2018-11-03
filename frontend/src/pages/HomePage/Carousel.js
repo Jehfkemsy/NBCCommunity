@@ -3,18 +3,16 @@ import { connect } from "react-redux";
 import {Row, Col} from 'reactstrap';
 import ContentA from './../../store/action/ContentA';
 import './style.css';
+import {Carousel} from 'react-responsive-carousel';
+import ShowCard from './../../components/ShowCard/ShowCard';
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 
-
-class Carousel extends Component{
+class Caro extends Component{
     render(){
         return(
-            <Row className = 'Hero'>
-                <Col sm="12" md={{ size: 6, offset: 3 }}>
-                    <h1>
-                       Carousel
-                    </h1>
-                </Col>
-            </Row>
+           <div>
+               <ShowCard/>
+           </div>
         )
         
     }
@@ -35,5 +33,5 @@ const mapStateToProps = state => {
   export default connect(
     mapStateToProps,
     mapDispatchToProps
-  )(Carousel);
+  )(Caro);
   

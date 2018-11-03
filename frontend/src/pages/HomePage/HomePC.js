@@ -5,7 +5,7 @@ import ContentA from './../../store/action/ContentA';
 import Hero from './Hero';
 import {Container} from 'reactstrap';
 import './style.css';
-import Carousel from './Carousel';
+import Caro from './Carousel';
 
 /**
  * Description:
@@ -28,8 +28,8 @@ class HomePC extends Component {
     return (
       <Container>
         <Hero/>
-        <Carousel/>
-
+        <Caro/>
+  
       </Container>
     );
   }

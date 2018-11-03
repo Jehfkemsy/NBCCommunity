@@ -94,7 +94,7 @@ class LandingPC extends Component {
 
   render() {
     if (this.props.auth) {
-      return <Redirect path="/home" />;
+      return <Redirect to="/home" />;
     } else {
       return (
         <Container className="">

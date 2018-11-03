@@ -10,7 +10,7 @@ class NavbarC extends Component {
   };
 
   render() {
-    const { auth } = this.props.auth;
+    const auth = this.props.auth;
 
     const authLinks = (
       <nav className="navbar navbar-light bg-light justify-content-between">

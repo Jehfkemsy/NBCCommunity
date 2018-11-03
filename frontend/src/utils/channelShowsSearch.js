@@ -42,7 +42,6 @@ let getChannelShows = (channel) => {
 });
 }
 
-// getChannelShows('oxygen'); //call function on requested channel
-export default getChannelShows;
+getChannelShows('oxygen'); //call function on requested channel
 
 //gets shows and its data from requested channel, all data is put into the shows array

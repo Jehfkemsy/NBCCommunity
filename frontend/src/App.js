@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import NavbarC from './components/Navbar/NavbarC';
 import HomePC from './pages/HomePage/HomePC'
-
 import './App.css';
+import ResponseCard from './components/RespnseCard/ResponseCard';
 
 class App extends Component {
   render() {
@@ -12,12 +12,13 @@ class App extends Component {
     };
     return (
       <div>
-       <BrowserRouter>
+        <BrowserRouter>
           <div className="App">
             <NavbarC />
+            <ResponseCard />
             <div style={margin}>
               <Switch>
-                <Route exact path="/" component={HomePC} />                           
+                <Route exact path="/" component={HomePC} />
               </Switch>
             </div>
           </div>

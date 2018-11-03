@@ -45,8 +45,9 @@ import {
 
 import { connect } from 'react-redux';
 import './style.css';
-import HomePC from "../HomePage/HomePC";
-import {Redirect} from 'react-router-dom';
+import HomePC from '../HomePage/HomePC';
+import { Redirect } from 'react-router-dom';
+import logo from '../../assets/img/NBCcommunity.png';
 
 class LandingPC extends Component {
   constructor(props) {
@@ -92,15 +93,13 @@ class LandingPC extends Component {
   }
 
   render() {
-    if(this.props.auth){
+    if (this.props.auth) {
+      return <Redirect path="/home" />;
+    } else {
       return (
-        <Redirect path="/home"/>
-      )
-    }
-    else {
-      return (     
         <Container className="">
-          <Row>
+          <img src={logo} alt="NBC hack logo" className="logo mb-5" />
+          <Row className="mt-3">
             <Col sm={{ size: 6, offset: 3 }}>
               <Form>
                 <div className="form-group text-left">
@@ -188,7 +187,6 @@ class LandingPC extends Component {
         </Container>
       );
     }
-    
   }
 }
 

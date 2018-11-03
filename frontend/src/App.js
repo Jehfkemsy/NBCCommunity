@@ -5,7 +5,7 @@ import HomePC from './pages/HomePage/HomePC';
 import landingP from './pages/LandingPage/LandingP';
 import './App.css';
 import ResponseCard from './components/RespnseCard/ResponseCard';
-import ShowPage from "./pages/ShowPage";
+import ShowPage from './pages/ShowPage/ShowPage';
 
 class App extends Component {
   render() {
@@ -22,7 +22,7 @@ class App extends Component {
               <Switch>
                 <Route exact path="/" component={landingP} />
                 <Route path="/home" component={HomePC} />
-                
+
                 <Route exact path="/show/:id" component={ShowPage} />
               </Switch>
             </div>

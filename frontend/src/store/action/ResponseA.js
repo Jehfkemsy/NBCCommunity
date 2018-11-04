@@ -30,7 +30,6 @@ const ResponseA = (dispatch) => {
                 console.log("error posting")
             })
         }
-        
     }
 }
 

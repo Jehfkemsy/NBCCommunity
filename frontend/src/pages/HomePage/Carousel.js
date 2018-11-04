@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Row, Col } from 'reactstrap';
 import ContentA from './../../store/action/ContentA';
+import ResponseA from './../../store/action/ResponseA';
 import './style.css';
 import { Carousel } from 'react-responsive-carousel';
 import ShowCard from './../../components/ShowCard/ShowCard';
@@ -123,8 +124,7 @@ class Caro extends Component {
           image:
             'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAVMAAACVCAMAAADSU+lbAAAAkFBMVEXZHiX////XAADYERrjbnHYBhPrnqDZGyPZGCD87u/bKS/YFB3XAA3cP0TYDhj//PzfT1PXAAfpk5X0ycr21db+9/fxvL3aIyreTFDkc3b76+vleXzbLjTcOj/43t/10NHhX2LfVFjuq63iZ2rql5nojI7soqTcNjvywsP429zdRkrwuLnrn6Dtp6nmfoDnhYcGBKxbAAAMhklEQVR4nN2da2OyPAyGMawrCqKo6FR0ijpP2/z//+719GyiBZKecO/1eYNy26ZpmqbO5yuafQ1L+ol8bGeKfqZ2Rt10OV68rRuOM0ias+Hqa6OnNY7HsMAC/dS3CPnIVMtHkKlvVm8AEDDX97hzgnt+yCKAyWE/Un2603CwuC/op7Z91BOhq9p8GXqdCUTMEzfJCyNIVr3H/6oDmio1hXeNSiHZrlzI0/NHVwZO57631gEtVIWa2u+lrXQCjGO+lTOYZ5v3JzSFvm7JSog7UVTSQ2/xIbmdlP+CpvChX7Ui4gOyi/7iQbL5+f8/oGkwNiFcPktgeE1+8KD9z716fk39nRnpctjwAK9ItqGwujzi6TXlUWxIPRHxDIij/pZgfe6qT68pbMqfoY195OLlEODBV+35NWVDcwo+MFTppBdOK8gn15T7LYMaZhmtZeame9gkjp9bU4ue6TvgVsml397oPbWmftugiFlS9XF/xaPYZPuagrX43pLQt3RiRNO3Ak1D/GMUWVUkqSFNC9bVoByfRHKoSlLrmrr4yLYancokta4pbA3qeMNXdZLa1tSTW+hP0+92g0VssFt0+hjj0a9QUtuaRviNwh9GHQeC0Of8tG3ksgj4uGxtO61SUtuaAjl4Uh8+BD55CDAs2niJQ11+qRR2NSU840oKofBJIST5m647taiJKnY1jagBqUX+IPYiN0fVVUQUQTN2NaUO/XZhLJlHA9Fv9F6pMXUsa0pd6s/KgkoezOr3/9RyKzWmjmVN2StJ0k9Eh3MfclledET3lLCqKS1LYoQbwzDPGJRu1SPftqYkc7pAzt4uu/2pnKpHvl1NvQlFUmQ3PcKh8/NfK9kdUo3Y1DQkbeovCXYRZuQfwiA2NQ1IuSdrQiKOw5JLFABrL4xiU1OSx0/ZVDviR6cER8qukTlsakqK81E9dw57dOKrYaxqSpn29+QFJrw+Rze1O/Yp+/pf9Am8LFnXFhY15Zwgae3DplPEfRac88YjpmFla0TTnVjThKLp3pqmnEE46+y7vW3vff/60oBA0Spb1JTm8ttaY/ow6GTnzlE6J+f/ZrCpKWkvipL0JY9/n7d/lbUTKERinlbT2sD8wp3DTnBs50xrCdLLh+fVtGM8ZucXnnmLF7LZVjY1bZI0Nb50D3YP8ewsfZBzzmxqSpr3a7Wx2Y4K5RGdUSLeYCzBpi81oGkaRyYtKiwxbWjL/K4WNXUYTVOj7hR84tpQuiUmwKam5ISJ1JioN1HsEub04W9VU3I2r75E5ywB4ZTGmryqsqop/dRuLzQxUfkUD6RONus2NQ0kSiC0hpqOOdzAaUaIbNZtahoeyJIe2b7pVpV68OWbOFZsauq9EeW88j5Ti2ncf8is/JVZiPvbNjXlVGfqh+khkF9+3wMly6dHNrTRb0TTZl7OhMIxns0CFA+OXmFoN+oX2j6XVU1lJqlfWv0XAOVsXU7awblC2+iyqqn6oZPut1NaI6YYhlqT3jOndFSrmsob1Bu2y6bK7gY9+/0EyZ+yqqmu8kejr7asrLT8ol8ahMFhV1M5D1VEPT3KKmEEIC+wX8IrwUcdoP9Sh6bcl/siIfXPdc4Binyo8cYfKBFyu5rqLtS1/Y5onZWtZF+V43OLsKypT17DlNBKE8oOh+zQJ6VuWtbUxLHozQ4fEIik30JwUW1rGn5Lf1U+7ztkX1UZJvicONuaSqy2MWwSVJSTePAlA97tt66prINYxhcmyKIyRa7QBtW6psbqocSzcounYs3xCbH2NTVXq29fOlcFCk/HT1L2NXXMVZEuq9DFGwoPxyfFVaCpyTIzL4Uf7s9Vnv3UmpK2LYkUlpahlw+4hevfF9enqdGKsh8Foqo5xxP9xwU0auqcy18aoqBij1pYrPSr6OjU1GgF1Pzhr6YpIYqCRaumRivJD/OOV/zPNTUqajPHT1Vbw1U79lHW3OBlJ3FO6pravG/ggIFuTR2Qjg+XkpPkIJsIc8FA4iZhIxl5TDxqGyt/vhBuqnBH4ZHEg9ooCLHHBnKUuMzU9J8z+kGhkvXWhKZz9OvROVscXgx11VQYRVKJifUNxKUIxoiQgBOq5fvkI9yQjxTKg+PPaxE0xa/SKaOEw8SIVyWs1im/bVqrzdBxfnzOhLfGvr1FszwezKV3MwsQdVTJ8qtn8Oe0E/QwxU+a5OO3PrT191WhRZXLljpBmKImeNMH2NdLVHT1IUl1z1aB4NPk4wyE/f0dQVPsR0sVdvQCGOs1AQeBCqH0VSuElekc/6doRwTvdWQJIVlq3AIQDhf0YLuDki+1wKccoscNJQcui8dg96FNVtFyTtabolRle8FrGmADyWOp08RXjjZg3dFjBEQ6yN62QgmgfOPPHaCjj6qBxmNv9cdd9QuRhFO13FKKdPKkg+9TaOdOw8L4VNp8sVf1BETrObl4346Slf1BsBPIpDhdxfHdCOZqDtZQNAhldsJpngyljBOy3l6qrzKUH8B8L28EhC2ROfxCC/F3CX4Pstbmi9Z6mX4E37LRJPHah35QY08beZSoIDLap/0Sh1A2ICAOPFDrstRi4mlX0toctZIyUR7fh7mU1yrecAiI0akXom9ImqRRsc5vFe80Fx9fbeNWDbEZomX1E0f+UdOEYH4xIVRioA9P1KT7ADmrH84Ij6K7MbQKzAjzLlG3FInP6PVUchpDyIKLHfIKhrSQxazsPHNFoTzyGij3mChDb1hO6F5MbUMKIpXGUZYmy5Z6LnH453s1AdJL3UnMDsSyeJwXe+CGi+yFc5qmBc0JMD01nshMuLUazfkKi3/fieHC48TyMEV5DmxS2umnntTnkK8JKMzIMX4nDtFfL8wd8YOSTbBUsq4kfaIucBSH5i8Yoy0si/NxOAwLuupoLmvHJHJWIGdPJ55bKKtNSyEty3EKc+Ps8Uq+qlWNalCPsIZo0OyZjbtG8FkGGE0dHnmfgr46OoCCFavJbHV4sLuLwMVpYqhc4T2kNDJELh4PYLHPnIGdfu1UFD1rSqxIdcaLotlrdxq3WnF9u1nK1dGQmlVJZ4BxESI3guRlmW663X66mvlS33JLTXqF7jO4EjEp0+M1FxIGmLSWQq/VPZcF0fFLAuarD7fTm/UGkdGw19qM7iiQtj6quZbz9OaKrgU8qVN8llH4X5TlqWz2hhrnV2vo73Qu8ZgD9Zoo0tFmqxfR/HB+NSk2pYvrMhNziekNtJwHM/HxMs6vtnO3SJafUlO0mwVo5fZIZfa0cXn30P7v+bsJO+WEOZIWQq3mzvjrZ1nvqPwmwS5uo1//jHf7PHB9u/U7LINMBZ0OdvzTcnIrcmhq1XRUHma/vsdR0yQxK8/81T5C/r3e8IUt95wuzswyxnRVYq6TgZPMGP69Pu/YqxlE18j1yqMwxGx8E6cZMfw0wNzdIgLE2WxpJDrWcPNfxONp1ayibjStvdnz5fKSa1pLyFfVp15VIE6VtMBvC+xdCV6wqdT65OIacRwm5Iypqm7lvWkCOS9IlmK//VSI/95Xd4E/TGqlCE9H2uC2Ebl1RPRSahbj/tiDiIW+d8QPA4CFzFEx/AFRzWRa0bRhgHDFpUab1+/ZW7P5Njt8yRVLt2fL7sk0I/bMO3Sh5GEaMvjamrq5+20j06K6a/UzOjik0nK0cNeQqWTqBRa/YawEyj1xoyJX6uH8+NZoT3XtSXoUVe52UnUeWjJ1zU2XiLQvnbR2+kwqZeX+2JJ6SWFWeUB3cf5SFrrmfh9biuiE0ZZk4AZrdOWy0hMacteUYKiwJR8GZio3MlhKMp++jgsSWbNF2TIQt2SaaF5ScWgbqctfzmii/CmwoG3D5DVFIVVQQGiw4GEpK7VRx88Jtzo0rU3b2gyAb6zaGY7tWuGG9DA8J4Zq0fR034UWVX14M1E+isSHbPIjh8WlO2jStFbbJ8oWwIWdweKxaOJv8vVdJwL+b2LVpumxr7ZVrsD1GCwq76NXRkOyqgx+k140anq0q6tQ7lJRzqDxWtFkL2R0oGTrHpt/uJkFtGp6pDtm1EtF/QAGK1xZCovEHwmyf/jAlpl5VbemR3rLHUDgYtrjnQLzsw9Dt++o0jsEpf3jVDHkfj+xDhwLoRhw/P658E+J5m7OMV3uhywCSMZfT9dBM7yvkuNX5Oh6yqifp48my4ymZ+LefjnchZc0/ii4EF3S+gfz8Wt/WqkniqXeXx3HHQSh6186COe+expf0O4oF7aSLVpdH2273c0+PbLfb7rv09Gf0DLDqJt2xrPdejBwGsluNuykXS1l7f4D0Bnn4xt+aawAAAAASUVORK5CYII=',
           title: 'The voice',
-          description: 'usaShows',
-          responses: 'usaShows'
+          description: 'usaShows'
         }
       ]
     ];
@@ -139,19 +139,12 @@ class Caro extends Component {
 
       // </div>
       <div>
-        {data.map(channel => {
+        {this.props.contents.map(channel => {
           return (
             <div className="scrolling-wrapper">
               <h1>{channel[0].description}</h1>
               {channel.map(show => {
-                return (
-                  <ShowCard
-                    // onClick={}
-                    image={show.image}
-                    title={show.title}
-                    description={show.description}
-                  />
-                );
+                return <ShowCard image={show.image} title={show.title} description={show.description} />;
               })}
             </div>
           );
@@ -163,15 +156,15 @@ class Caro extends Component {
 
 const mapStateToProps = state => {
   return {
-    telemundoShows: state.ContentR.telemundoShows,
-    syfyShows: state.ContentR.syfyShows,
-    usaShows: state.ContentR.usaShows
+    contents: state.ContentR.contents,
+    responses: state.ResponseR.responses
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    contentFn: ContentA(dispatch)
+    contentFn: ContentA(dispatch),
+    responseFn: ResponseA(dispatch)
   };
 };
 

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import AuthA from './../../store/action/AuthA';
-import PropTypes from 'prop-types';
 
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 class NavbarC extends Component {
   logout = () => {
@@ -24,7 +24,10 @@ class NavbarC extends Component {
             placeholder="Search"
             aria-label="Search"
           />
-          <button className="btn btn-outline-success my-2 my-sm-0" type="submit">
+          <button
+            className="btn btn-outline-success my-2 my-sm-0"
+            type="submit"
+          >
             Search
           </button>
         </form>

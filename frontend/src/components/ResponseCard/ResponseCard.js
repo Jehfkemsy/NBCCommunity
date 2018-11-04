@@ -44,6 +44,7 @@ const Styles = {
         "background-color": "red" 
 
     }
+
 }
 
 ResponseCard.propTypes = {
@@ -53,3 +54,6 @@ ResponseCard.propTypes = {
   upIcon: PropTypes.bool,
   downIcon: PropTypes.bool
 };
+
+  };
+

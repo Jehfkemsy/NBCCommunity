@@ -39,35 +39,4 @@ const Styles = {
         fontSize: 12,
 
     }
-
-ResponseCard.propTypes = {
-  userIcon: PropTypes.string,
-  comments: PropTypes.string,
-  userName: PropTypes.string,
-  upIcon: PropTypes.bool,
-  downIcon: PropTypes.bool
-};
-
-export default ResponseCard;
-const Styles = {
-  cardStyle: {
-    height: 20,
-    width: 'auto'
-  },
-  userNameStyle: { fontSize: 14 },
-  upIcon: {
-    height: '50%',
-    width: '50%'
-  },
-  downIcon: {
-    height: '50%',
-    width: '50%'
-  },
-  body: {
-    textAlign: 'left',
-    paddingLeft: 10,
-    paddingTop: 5,
-    textWrap: 'wrap',
-    fontSize: 12
-  }
-};
+  };

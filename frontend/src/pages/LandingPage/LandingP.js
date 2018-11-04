@@ -97,14 +97,8 @@ class LandingPC extends Component {
       return <Redirect to="/home" />;
     } else {
       return (
-<<<<<<< HEAD
-        <React.Fragment>
-          <div className="background" />
+        <div className="background">
         <Container className="containerL">
-=======
-        <Container className="landing_page">
-          <img src={logo} alt="NBC hack logo" className="logo mb-5" />
->>>>>>> b8a9e399c693f60ba90a1c510a2838fccc3b60f7
           <Row className="mt-3">
             <Col className ='card' sm={{ size: 6, offset: 3 }}>
               <img src={logo} alt="NBC hack logo" className="logo mb-5" />
@@ -191,7 +185,7 @@ class LandingPC extends Component {
             </Col>
           </Row>
         </Container>
-        </React.Fragment>
+        </div>
       );
     }
   }

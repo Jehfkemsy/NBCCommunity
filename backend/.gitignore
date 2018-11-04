@@ -19,3 +19,4 @@ node_modules
 npm-debug.log
 env.js
 client/
+yarn.lock

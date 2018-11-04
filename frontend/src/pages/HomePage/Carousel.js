@@ -65,12 +65,13 @@ class Caro extends Component {
     }
   }
 
-  remap = src => {
+  remap = (src, channel) => {
     return src.map(show => {
       return {
         title: show.attributes.name,
         image: show.relationships.media.data[0].relationships.image.data.attributes.path,
-        description: show.attributes.description
+        description: show.attributes.description,
+        channel: channel
       };
     });
   };

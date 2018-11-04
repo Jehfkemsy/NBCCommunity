@@ -2,12 +2,11 @@ import axios from 'axios';
 
 const ResponseA = (dispatch) => {
     return {
-        getResponse: () => {
-            axios.get(process.env.REACT_APP_RESPONSE_GET_URL)
-            // axios.get(api_mock)
-            .then(res => {
-                
-                dispatch({type:"GET_RESPONSE", telemundo: []})
+        getResponses: () => {
+            axios.get(process.env.REACT_APP_RESPONSE_URL)
+            .then(res => {     
+                console.log(res.data)          
+                dispatch({type:"GET_RESPONSE", data: res.ata})
             })
             .catch(err => {
                 console.log(err)

@@ -2,6 +2,9 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import ShowCard from './../../components/ShowCard/ShowCard';
 import ContentA from './../../store/action/ContentA';
+import ResponseA from './../../store/action/ResponseA';
+import ResponseCards from './../../components/ResponseCard/ResponseCard';
+
 import Hero from './Hero';
 import {Container} from 'reactstrap';
 import './style.css';
@@ -21,7 +24,8 @@ import Caro from './Carousel';
  */
 class HomePC extends Component {
   componentWillMount() {
-    this.props.contentFn.getContents('telemundo');
+    // this.props.contentFn.getContents('telemundo');
+    this.props.responseFn.getResponses();
   }
 
   render() {
@@ -43,7 +47,9 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    contentFn : ContentA(dispatch)
+    contentFn : ContentA(dispatch),
+    responseFn: ResponseA(dispatch)
+    
   };
 };
 

@@ -102,3 +102,9 @@ ul.modal_btns button.btn {
   overflow-y: auto;
   max-height: 150px;
 }
+
+.col-sm-10.offset-sm-1.comments
+  .MuiPaper-root-99.MuiPaper-elevation1-102.MuiPaper-rounded-100.MuiCard-root-98 {
+  width: 100% !important;
+  box-shadow: none;
+}

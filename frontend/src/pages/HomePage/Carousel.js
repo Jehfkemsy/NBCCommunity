@@ -27,21 +27,16 @@ class Caro extends Component{
              {
                dummyShows.map(
                  item => {
-                   return <ShowCard 
-                   image= {item.image}
-                   title={item.title}
-                   description={item.description}
+                   return <ShowCard className = 'card'
+                    image= {item.image}
+                    title={item.title}
+                    description={item.description}
                    />
                  }
                )
              }
-
-
-              
-                
            </div>
         )
-        
     }
 }
 

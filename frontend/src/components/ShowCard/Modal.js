@@ -41,8 +41,8 @@ class showModal extends React.Component {
         video: "",
         type: "",
         show: this.props.buttonLabel,
-        dislikes:1,
-        likes:1,
+        dislikes:0,
+        likes:0,
         decorations: true,
         views: 0
     }

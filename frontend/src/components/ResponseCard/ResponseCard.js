@@ -18,7 +18,7 @@ const ResponseCard = (props) => {
 };
 export default ResponseCard;
 const Styles = {
-    cardStyle:{
+    cardStyle :{
         height: 20,
         width: 'auto',
     },

@@ -9,7 +9,6 @@ import { Redirect } from 'react-router-dom';
 class NavbarC extends Component {
   logout = () => {
     this.props.authFn.logout();
-    console.log('clicek');
   };
 
   render() {
@@ -18,7 +17,7 @@ class NavbarC extends Component {
     const authLinks = (
       <nav className="navbar navbar-light bg-light justify-content-between">
         <a href="/" className="navbar-brand">
-          <img className="nav-logo" src={Logo} />
+          <img className="nav-logo" alt="loading..." src={Logo} />
         </a>
 
         <button onClick={this.logout} className="btn btn-outline-danger my-2 my-sm-0" type="submit">
@@ -26,7 +25,7 @@ class NavbarC extends Component {
         </button>
       </nav>
     );
-    if (this.props.auth == false) {
+    if (this.props.auth === false) {
       return <Redirect to="/" />;
     } else {
       return <div>{auth ? authLinks : ''}</div>;

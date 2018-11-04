@@ -4,8 +4,7 @@ const ResponseA = (dispatch) => {
     return {
         getResponses: () => {
             axios.get(process.env.REACT_APP_RESPONSE_URL)
-            .then(res => {     
-                console.log(res.data)          
+            .then(res => {             
                 dispatch({type:"GET_RESPONSE", data: res.data})
             })
             .catch(err => {
@@ -14,8 +13,6 @@ const ResponseA = (dispatch) => {
             });   
         },
         postResponse: (data) => {
-            console.log("inside postResponse") 
-            console.log(data)
             axios.post(process.env.REACT_APP_RESPONSE_URL,data)
             .then(res=>{
                  
@@ -28,7 +25,6 @@ const ResponseA = (dispatch) => {
                     console.log(err)
                     dispatch({type:"GET_RESPONSE_ERR"})
                 });   
-                console.log("post successful")
             })
             .catch(err => {
                 console.log("error posting")

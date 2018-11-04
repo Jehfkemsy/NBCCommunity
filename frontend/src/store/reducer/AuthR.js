@@ -1,5 +1,3 @@
-import LOGOUT from '../types/types';
-
 const authInitState = {
   auth: false,
   auth_err: false

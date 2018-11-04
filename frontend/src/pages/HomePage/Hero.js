@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import {Row, Col } from 'reactstrap'; 
-import ShowCard from './../../components/ShowCard/ShowCard';
 import ContentA from './../../store/action/ContentA';
 import './style.css';
 

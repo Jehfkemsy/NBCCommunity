@@ -28,6 +28,7 @@ class HomePC extends Component {
     return (
       <Container>
         <Hero/>
+        <Caro />
         <Caro/>
   
       </Container>

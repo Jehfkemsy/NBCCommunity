@@ -36,3 +36,7 @@ img {
   opacity: 0;
   transition: all 0.5s;
 }
+
+.top{
+    top: 20px;
+}

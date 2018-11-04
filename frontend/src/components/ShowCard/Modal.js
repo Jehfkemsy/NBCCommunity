@@ -1,6 +1,8 @@
 import React from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import ResponseA from './../../store/action/ResponseA';
 import Comments from '../ResponseCard/ResponseCard';
+import { connect } from 'react-redux';
 
 class showModal extends React.Component {
   constructor(props) {
@@ -16,6 +18,21 @@ class showModal extends React.Component {
     this.setState({
       modal: !this.state.modal
     });
+  }
+
+  postResponse = () => {
+    let data = {
+      percentageRating: 0,
+      userId: localStorage.getItem("userId"),
+      comment,
+      image,
+      video,
+      type,
+      show,
+      dislikes:1,
+      likes:1,
+      views: 0
+  }
   }
 
   render() {
@@ -62,4 +79,20 @@ class showModal extends React.Component {
   }
 }
 
-export default showModal;
+const mapStateToProps = state => {
+  return {
+    
+  };
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    responseFn: ResponseA(dispatch)
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(showModal);
+

@@ -4,11 +4,11 @@ import NavbarC from './components/Navbar/NavbarC';
 import HomePC from './pages/HomePage/HomePC';
 import landingP from './pages/LandingPage/LandingP';
 import './App.css';
-import ResponseCard from './components/RespnseCard/ResponseCard';
+import ResponseCard from './components/ResponseCard/ResponseCard';
 import ShowPage from './pages/ShowPage/ShowPage';
 import { ApolloProvider } from 'react-apollo';
 import ApolloClient from 'apollo-boost';
-import ShowPage from './pages/ShowPage/ShowPage';
+// import ShowPage from './pages/ShowPage/ShowPage';
 
 const client = new ApolloClient({
   uri: 'https://xyabwrrxxk.execute-api.us-east-1.amazonaws.com/stage',

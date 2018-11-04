@@ -10,29 +10,64 @@ import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
 class Caro extends Component {
   state = {
-    contents: []
+    contents: [[{title: "",
+                image:"",
+                description: ""}],
+                [{title: "",
+                image:"",
+                description: ""}],
+                [{title: "",
+                image:"",
+                description: ""}]
+              ],
+    telemundoLoaded: false,
+    syfyLoaded: false,
+    usaLoaded: false
   }
 
   componentDidUpdate(prevProp,prevState) {
     if(prevProp.telemundoShows !== this.props.telemundoShows)
     {
-      let tmp = [this.props.telemundoShows,this.props.syfyShows,this.props.usaShows]
+      let telemundoReform = this.remap(this.props.telemundoShows)
+      let syfyReform = this.remap(this.props.syfyShows)
+      let usaReform = this.remap(this.props.usaShows)
+      let tmp = [telemundoReform, syfyReform, usaReform]
       this.setState({contents: tmp})
       console.log("tmp: ", tmp)
+      this.setState({telemundoLoaded: true})
     }   
+    
     if(prevProp.syfyShows !== this.props.syfyShows)
     {
-      let tmp = [this.props.telemundoShows,this.props.syfyShows,this.props.usaShows]
+      let telemundoReform = this.remap(this.props.telemundoShows)
+      let syfyReform = this.remap(this.props.syfyShows)
+      let usaReform = this.remap(this.props.usaShows)
+      let tmp = [telemundoReform, syfyReform, usaReform]
       this.setState({contents: tmp})
       console.log("tmp: ", tmp)
+      this.setState({syfyLoaded: true})
     }    
     if(prevProp.usaShows !== this.props.usaShows)
     {
-      let tmp = [this.props.telemundoShows,this.props.syfyShows,this.props.usaShows]
+      let telemundoReform = this.remap(this.props.telemundoShows)
+      let syfyReform = this.remap(this.props.syfyShows)
+      let usaReform = this.remap(this.props.usaShows)
+      let tmp = [telemundoReform, syfyReform, usaReform]
       this.setState({contents: tmp})
       console.log("tmp: ", tmp)
+      this.setState({usaLoaded: true})
     } 
   }
+
+  remap = (src) => {
+    return src.map(show => {
+      return {
+        title: show.attributes.name,
+        image: show.relationships.media.data[0].relationships.image.data.attributes.path,
+        description: show.attributes.description
+      }});
+  }
+
 
   render() {
     console.log(this.props.responses)
@@ -40,7 +75,7 @@ class Caro extends Component {
     console.log('Data');
     return (
       <div>
-      {/* {this.props.contents.map(channel => {
+      {this.state.telemundoLoaded && this.state.syfyLoaded && this.state.usaLoaded ? this.state.contents.map(channel => {
         return(
           <div className="scrolling-wrapper">
           <h1>{channel[0].description}</h1>
@@ -59,8 +94,11 @@ class Caro extends Component {
               )
             })}
           </div>
+            )
+          }
         )
-      })} */}
+        : console.log("empty")
+      }
       </div>
     );
   }

@@ -1,7 +1,6 @@
 import React from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import Comments from '../ResponseCard/ResponseCard';
-import responseCard from '../ResponseCard/ResponseCard'
 
 class showModal extends React.Component {
   constructor(props) {
@@ -36,19 +35,19 @@ class showModal extends React.Component {
             </div>
             <div className="row">
               <div className="col-sm-10 comments">
-              {this.props.responses.map(response => {
+            
+              </div>
+            </div>
+          </ModalBody>
+          {this.props.responses.map(response => {
             console.log('modal')
             console.log(response)
             return(
               <div>
-              <responseCard comments={response.comment}/>
+              <Comments comments={response.comment}/>
               </div>
             )
           })}
-              </div>
-            </div>
-          </ModalBody>
-         
           <ModalFooter>
             <Button color="primary" onClick={this.toggle}>
               Comment

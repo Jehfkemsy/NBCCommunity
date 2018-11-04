@@ -9,8 +9,8 @@ let postResponse = (userId,comment,image,type,video,show) => {
         video,
         type,
         show,
-        dislikes:1,
-        likes:1,
+        dislikes:0,
+        likes:0,
         views: 0
     })
 }

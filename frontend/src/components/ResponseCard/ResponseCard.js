@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import { Media } from 'reactstrap';
 import PropTypes from 'prop-types';
+import updateRating from '../../utils/updateResponseRating'
 
-const ResponseCard = ({ userIcon, comments, userName, upIcon, downIcon }) => {
+
+const ResponseCard = ({ id,rating,userIcon, comments, userName, upIcon, downIcon }) => {
     console.log('this is response')
     console.log(comments)
   return (
@@ -14,8 +16,8 @@ const ResponseCard = ({ userIcon, comments, userName, upIcon, downIcon }) => {
       <Media body style={Styles.body}>
         {comments}
       </Media>
-      <Media style={Styles.upIcon} object src={upIcon} alt={upIcon} />
-      <Media style={Styles.downIcon} object src={downIcon} alt={downIcon} />
+      <Media onClick = {() => updateRating(id,'like')} style={Styles.upIcon} object src={upIcon} alt={upIcon} />
+      <Media onClick = {() => updateRating(id,'dislike')} style={Styles.downIcon} object src={downIcon} alt={downIcon} />
     </Media>
     </div>
   );

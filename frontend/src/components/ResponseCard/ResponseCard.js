@@ -1,13 +1,11 @@
-import React, { Component } from 'react';
-import { Media, Form} from 'reactstrap';
+import React from 'react';
+import { Media} from 'reactstrap';
 import PropTypes from 'prop-types';
 import updateRating from '../../utils/updateResponseRating'
 import {Col, Row} from 'reactstrap';
 
 
 const ResponseCard = ({ id,rating,userIcon, comments, userName}) => {
-    console.log('this is response')
-    console.log(comments)
     const upIcon = "https://image.flaticon.com/icons/svg/25/25330.svg"
     const downIcon = "https://image.flaticon.com/icons/svg/25/25243.svg"
   return (

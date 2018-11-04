@@ -32,7 +32,6 @@ class showModal extends React.Component {
   }
 
   handlePostResponse() {
-    console.log(this.state.currentComment)
       let data = {
         percentageRating: 0,
         userId: "",
@@ -47,7 +46,6 @@ class showModal extends React.Component {
         views: 0
     }
 
-    // console.log(data)
     this.props.responseFn.postResponse(data);
   }
 
@@ -69,8 +67,6 @@ class showModal extends React.Component {
             <div className="row">
               <div className="col-sm-10 comments">
                 {this.props.responses.map(response => {
-                  console.log('modal')
-                  console.log(response)
                   return(
                     <div>
                     <ResponseCard id = {response.id} rating = {response.percentageRating} comments={response.comment}/>
@@ -105,12 +101,6 @@ class showModal extends React.Component {
   }
 }
 
-const mapStateToProps = state => {
-  return {
-    
-  };
-};
-
 const mapDispatchToProps = dispatch => {
   return {
     responseFn: ResponseA(dispatch)
@@ -118,7 +108,7 @@ const mapDispatchToProps = dispatch => {
 };
 
 export default connect(
-  mapStateToProps,
+  null,
   mapDispatchToProps
 )(showModal);
 

@@ -4,11 +4,8 @@ import NavbarC from './components/Navbar/NavbarC';
 import HomePC from './pages/HomePage/HomePC';
 import landingP from './pages/LandingPage/LandingP';
 import './App.css';
-import ResponseCard from './components/ResponseCard/ResponseCard';
-import ShowPage from './pages/ShowPage/ShowPage';
 import { ApolloProvider } from 'react-apollo';
 import ApolloClient from 'apollo-boost';
-// import ShowPage from './pages/ShowPage/ShowPage';
 
 const client = new ApolloClient({
   uri: 'https://xyabwrrxxk.execute-api.us-east-1.amazonaws.com/stage',
@@ -17,26 +14,16 @@ const client = new ApolloClient({
 
 class App extends Component {
   render() {
-    // let margin = {
-    //   marginTop: '3%'
-    // };
     return (
       <ApolloProvider client={client}>
         <BrowserRouter>
-          
-          
-            
             <div >
             <NavbarC />
               <Switch>
                 <Route exact path="/" component={landingP} />
                 <Route path="/home" component={HomePC} />
-
-                <Route exact path="/show/:id" component={ShowPage} />
               </Switch>
             </div>
-          
-          
         </BrowserRouter>
       </ApolloProvider>
     );

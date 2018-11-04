@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import ShowCard from './../../components/ShowCard/ShowCard';
 import ContentA from './../../store/action/ContentA';
 import ResponseA from './../../store/action/ResponseA';
-import ResponseCards from './../../components/ResponseCard/ResponseCard';
 
 import Hero from './Hero';
 import { Container } from 'reactstrap';
@@ -24,7 +22,6 @@ import GQL from '../../components/graphql/Graph';
  */
 class HomePC extends Component {
   componentWillMount() {
-    // this.props.contentFn.getContents('telemundo');
     this.props.responseFn.getResponses();
   }
 
@@ -34,7 +31,6 @@ class HomePC extends Component {
         <GQL />
         <Hero />
         <Caro />
-        
       </Container>
     );
   }

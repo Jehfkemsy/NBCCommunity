@@ -1,5 +1,4 @@
 import axios from "axios";
-// import {reg_url, login_url} from '../../config.js'
 
 const AuthA = dispatch => {
   return {
@@ -31,7 +30,6 @@ const AuthA = dispatch => {
         .then(res => {
           localStorage.setItem("user", data.email);
           localStorage.setItem("token", res.data.id);
-          // localStorage.setItem("userId", res.data.userId);
           dispatch({ type: "LOGIN" });
         })
         .catch(err => {

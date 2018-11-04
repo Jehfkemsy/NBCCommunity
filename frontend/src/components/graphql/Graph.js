@@ -56,8 +56,6 @@ class GQL extends Component {
 
           //REDUX THIS THING PLEASE DATA SHOULD BE PASSED TO ACTION IF IT IS TO WORK
           //data
-          console.log("Inside GQL")
-          console.log(data.shows.data);
           this.props.contentFn.getTelemundo(data.shows.data);
           return <React.Fragment />;
         }}
@@ -73,8 +71,6 @@ class GQL extends Component {
 
         //REDUX THIS THING PLEASE DATA SHOULD BE PASSED TO ACTION IF IT IS TO WORK
         //data
-        console.log("Inside GQL")
-        console.log(data.shows.data);
         this.props.contentFn.getSyfy(data.shows.data);
         return <React.Fragment />;
       }}
@@ -90,8 +86,6 @@ class GQL extends Component {
 
         //REDUX THIS THING PLEASE DATA SHOULD BE PASSED TO ACTION IF IT IS TO WORK
         //data
-        console.log("Inside GQL")
-        console.log(data.shows.data);
         this.props.contentFn.getUSA(data.shows.data);
         return <React.Fragment />;
       }}

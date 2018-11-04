@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Row, Col } from 'reactstrap';
 import ContentA from './../../store/action/ContentA';
 import ResponseA from './../../store/action/ResponseA';
 import './style.css';
-import { Carousel } from 'react-responsive-carousel';
 import ShowCard from './../../components/ShowCard/ShowCard';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
@@ -25,7 +23,7 @@ class Caro extends Component {
     usaLoaded: false
   }
 
-  componentDidUpdate(prevProp,prevState) {
+  componentDidUpdate(prevProp) {
     if(prevProp.telemundoShows !== this.props.telemundoShows)
     {
       let telemundoReform = this.remap(this.props.telemundoShows)
@@ -33,7 +31,6 @@ class Caro extends Component {
       let usaReform = this.remap(this.props.usaShows)
       let tmp = [telemundoReform, syfyReform, usaReform]
       this.setState({contents: tmp})
-      console.log("tmp: ", tmp)
       this.setState({telemundoLoaded: true})
     }   
     
@@ -44,7 +41,6 @@ class Caro extends Component {
       let usaReform = this.remap(this.props.usaShows)
       let tmp = [telemundoReform, syfyReform, usaReform]
       this.setState({contents: tmp})
-      console.log("tmp: ", tmp)
       this.setState({syfyLoaded: true})
     }    
     if(prevProp.usaShows !== this.props.usaShows)
@@ -54,7 +50,6 @@ class Caro extends Component {
       let usaReform = this.remap(this.props.usaShows)
       let tmp = [telemundoReform, syfyReform, usaReform]
       this.setState({contents: tmp})
-      console.log("tmp: ", tmp)
       this.setState({usaLoaded: true})
     } 
   }
@@ -70,9 +65,6 @@ class Caro extends Component {
 
 
   render() {
-    console.log(this.props.responses)
-    // let data = [this.props.te]
-    console.log('Data');
     return (
       <div>
       {this.state.telemundoLoaded && this.state.syfyLoaded && this.state.usaLoaded ? this.state.contents.map(channel => {
@@ -83,21 +75,19 @@ class Caro extends Component {
               let responses = [];
 
               this.props.responses.map(response => {
-                if(response.show == show.title)
+                if(response.show === show.title)
                   responses.push(response)
               })
-              console.log('responses:')
-              console.log(responses)
 
               return(
-                <ShowCard responses = {responses} image = {show.image} title={show.title} description={show.description}></ShowCard>
+                <ShowCard key={show.image} responses = {responses} image = {show.image} title={show.title} description={show.description}></ShowCard>
               )
             })}
           </div>
             )
           }
         )
-        : console.log("empty")
+        : console.log("Empty channel list")
       }
       </div>
     );

@@ -6,7 +6,6 @@ Full cards to display the shows
 import React from 'react';
 import { Card, CardImg } from 'reactstrap';
 import PropTypes from 'prop-types';
-// import { Animated } from 'react-animated-css';
 import ShowModal from './Modal';
 
 const MediaCard = ({ image, title, description, responses }) => {

@@ -45,7 +45,6 @@ import {
 
 import { connect } from 'react-redux';
 import './style.css';
-// import HomePC from '../HomePage/HomePC';
 import { Redirect } from 'react-router-dom';
 import logo from '../../assets/img/NBCcommunity.png';
 
@@ -73,7 +72,6 @@ class LandingPC extends Component {
       password: this.state.password
     };
     this.props.authFn.login(data);
-    // console.log(data);
   };
 
   signup = () => {
@@ -83,7 +81,6 @@ class LandingPC extends Component {
       password: this.state.password
     };
     this.props.authFn.signup(data);
-    // console.log(data);
   };
 
   toggle() {

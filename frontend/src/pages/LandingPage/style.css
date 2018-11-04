@@ -5,7 +5,7 @@
 .card{
   margin-top: 10vh;
   margin-bottom: 5vh;
-  padding-bottom: 5vh;
+  /* padding-bottom: 5vh; */
 }
 
 .buttons {
@@ -16,8 +16,8 @@
 /* http://i67.tinypic.com/2cijokz.png */
 /* https://images.unsplash.com/photo-1539786774582-0707555f1f72?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=584a0c57ca1a534647137dfcc191a995&auto=format&fit=crop&w=967&q=80 */
 .background{
-  z-index: -5;
-  height: 100vh;
+  /* z-index: -5; */
+  min-height: 100vh;
   width: 100vw;
   background-image: url(http://i67.tinypic.com/2cijokz.png );
   /* -webkit-filter: blur(1px); */

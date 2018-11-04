@@ -25,8 +25,9 @@ class App extends Component {
         <BrowserRouter>
           
           
-            {/* <NavbarC /> */}
+            
             <div >
+            <NavbarC />
               <Switch>
                 <Route exact path="/" component={landingP} />
                 <Route path="/home" component={HomePC} />

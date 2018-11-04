@@ -132,14 +132,22 @@ class LandingPC extends Component {
                     Check me out
                   </label>
                 </div>
-                <Button onClick={this.login} block color="primary" className="mt-4">
-                  Login
-                </Button>
+               <Row>
+               <Col>
+                  <Button onClick={this.login} block color="primary" className="mt-4">
+                    Login
+                  </Button>
+                </Col>
+                <Col>
+                  <Button block color="info" onClick={this.toggle} className="mt-4">
+                    Sign Up
+                  </Button>
+                </Col>
+               </Row>
               </Form>
               <hr className="mt-5" />
-              <Button block color="info" onClick={this.toggle} className="mt-5">
-                Sign Up
-              </Button>
+              {/* <p>UPE + 1</p> */}
+              
               <Modal
                 size="lg"
                 isOpen={this.state.modal}
@@ -173,7 +181,7 @@ class LandingPC extends Component {
                     </div>
                   </form>
                 </ModalBody>
-                <ModalFooter>
+                <ModalFooter >
                   <Button color="primary" onClick={this.signup}>
                     Submit
                   </Button>{' '}

@@ -30,6 +30,15 @@ class Caro extends Component {
           <div className="scrolling-wrapper">
           <h1>{channel[0].description}</h1>
             {channel.map(show => {
+              let responses = [];
+
+              this.props.responses.map(response => {
+                if(response.show == show.title)
+                  responses.push(response)
+              })
+              console.log('responses:')
+              console.log(responses)
+
               return(
                 <ShowCard  image = {show.image} title={show.title} description={show.description}></ShowCard>
               )

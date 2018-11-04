@@ -37,22 +37,6 @@ class Caro extends Component {
   render() {
     console.log(this.props.responses)
     // let data = [this.props.te]
-<<<<<<< HEAD
-    console.log('Telemundo Data');
-    console.log(this.props.telemundoShows);
-    return (
-      <div>
-        {/* {this.props.contents.map(channel => {
-          return (
-            <div className="scrolling-wrapper">
-              <h1>{channel[0].description}</h1>
-              {channel.map(show => {
-                return <ShowCard image={show.image} title={show.title} description={show.description} />;
-              })}
-            </div>
-          );
-        })} */}
-=======
     console.log('Data');
     return (
       <div>
@@ -77,7 +61,6 @@ class Caro extends Component {
           </div>
         )
       })}
->>>>>>> master
       </div>
     );
   }

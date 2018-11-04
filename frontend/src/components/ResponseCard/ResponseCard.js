@@ -1,33 +1,44 @@
 
 import React, { Component } from 'react'
-import { Card, CardImg } from 'reactstrap';
-import { Animated } from "react-animated-css";
-export default class MediaCard extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            comment: this.props.comment,
-            userName: this.props.username,
-            profilePic: this.props.profilePic,
-        }
-    };
+import { Media } from 'reactstrap';
+const ResponseCard = (props) => {
+    return (
+        <Media style={Styles.cardStyle}>
+            <Media left href="#">
+                <Media object data-src={props.userIcon} alt={props.userName} />
+            </Media>
+            <Media body style={Styles.body}>
+                {props.comments}
+            </Media>
+            <Media style={Styles.upIcon} object data-src={props.userIcon} alt={props.upIcon} />
+            <Media style={Styles.downIcon} object data-src={props.userIcon} alt={props.downIcon} />
 
-    render() {
-        return (
-            <Animated animationInDelay={2} animationIn="slideInRight" animationOut="slideInRight">
-                <Card style={cardStyle}>
-                    <CardImg width='10%' height='10%' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJLvh09sXH0OqJj00RJwbikO8tAZFMKIBZYG_fgqtGovnT6C_y" />
-                    <h3>{this.state.Name}</h3>
-                    <p>{this.state.Description}</p>
-                    <CardImg width='10%' height='10%' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJLvh09sXH0OqJj00RJwbikO8tAZFMKIBZYG_fgqtGovnT6C_y" />
-                    <CardImg width='10%' height='10%' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJLvh09sXH0OqJj00RJwbikO8tAZFMKIBZYG_fgqtGovnT6C_y" />
-                </Card>
-            </Animated>
-        )
+        </Media>
+    );
+};
+export default ResponseCard;
+const Styles = {
+    cardStyle={
+        height: 20,
+        width: 'auto',
+    },
+    userNameStyle={ fontSize: 14 },
+    upIcon={
+        height: '50%',
+        width: '50%'
+    },
+    downIcon={
+        height: '50%',
+        width: '50%'
+    },
+    body ={
+        textAlign: 'left',
+        paddingLeft: 10,
+        paddingTop: 5,
+        textWrap: 'wrap',
+        fontSize: 12,
+
     }
-}
-const cardStyle = {
-    height: "auto",
-    width: 350,
-    
+
+
 }

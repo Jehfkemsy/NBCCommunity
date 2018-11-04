@@ -1,5 +1,6 @@
 import axios from 'axios';
 
+
 const ContentA = (dispatch) => {
     return {
         getContents: (channel) => {

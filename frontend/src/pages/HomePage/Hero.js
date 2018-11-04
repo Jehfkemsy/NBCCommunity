@@ -11,9 +11,7 @@ class Hero extends Component{
         return(
             <Row className='Hero'>
                 <Col sm="12" md={{ size: 6, offset: 3 }}>
-                    <h1>
-                        VR LATER
-                    </h1>
+                    
                 </Col>
             </Row>
         )

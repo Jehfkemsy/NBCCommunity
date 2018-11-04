@@ -1,16 +1,12 @@
 const responseInitState = {
-    telemundoShows: [],
-    syfyShows: [],
-    usaShows: []
+    response: []
   };
   
   function ContentR(state = responseInitState, action) {
     switch (action.type) {
       case "GET_RESPONSE": 
         return { ...state, 
-          telemundoShows: state.telemundoShows.concat(action.telemundoShows),
-          syfyShows: state.syfyShows.concat(action.syfyShows),
-          usaShows: state.usaShows.concat(action.usaShows)          
+          response: action.data
         };
       default:
         return state;

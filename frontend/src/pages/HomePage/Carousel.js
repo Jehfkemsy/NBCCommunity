@@ -35,10 +35,7 @@ class Caro extends Component{
                  }
                )
              }
-
-
-              
-                
+               
            </div>
         )
         

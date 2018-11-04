@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter,InputGroup, InputGroupAddon, Input  } from 'reactstrap';
 import Comments from '../ResponseCard/ResponseCard';
 
 class showModal extends React.Component {
@@ -46,7 +46,12 @@ class showModal extends React.Component {
                 })}
               </div>
             </div>
-
+                <div>
+                      <InputGroup>
+              <InputGroupAddon addonType="prepend">@</InputGroupAddon>
+              <Input placeholder="username" />
+            </InputGroup>
+                </div>
           </ModalBody>          
           <ModalFooter>
             <Button color="primary" onClick={this.toggle}>

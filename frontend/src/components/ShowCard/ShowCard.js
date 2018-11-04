@@ -14,7 +14,7 @@ const MediaCard = ({ image, title, description }) => {
     <Card style={cardStyle}>
       <div className="card-details d-inline-block">
         <div className="cards-text">
-          <ShowModal buttonLabel={title} image={image} />
+          <ShowModal buttonLabel={title} image={image} userName="test" />
           <h1>{title}</h1>
           <p>{description}</p>
         </div>

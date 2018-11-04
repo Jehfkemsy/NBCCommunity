@@ -1,19 +1,30 @@
 import React, { Component } from 'react';
 import { Media } from 'reactstrap';
-const ResponseCard = props => {
+import PropTypes from 'prop-types';
+
+const ResponseCard = ({ userIcon, comments, userName, upIcon, downIcon }) => {
   return (
     <Media style={Styles.cardStyle}>
       <Media left href="#">
-        <Media object data-src={props.userIcon} alt={props.userName} />
+        <Media object src={userIcon} alt={userName} className="rounded" />
       </Media>
       <Media body style={Styles.body}>
-        {props.comments}
+        {comments}
       </Media>
-      <Media style={Styles.upIcon} object data-src={props.userIcon} alt={props.upIcon} />
-      <Media style={Styles.downIcon} object data-src={props.userIcon} alt={props.downIcon} />
+      <Media style={Styles.upIcon} object src={upIcon} alt={upIcon} />
+      <Media style={Styles.downIcon} object src={downIcon} alt={downIcon} />
     </Media>
   );
 };
+
+ResponseCard.propTypes = {
+  userIcon: PropTypes.string,
+  comments: PropTypes.string,
+  userName: PropTypes.string,
+  upIcon: PropTypes.bool,
+  downIcon: PropTypes.bool
+};
+
 export default ResponseCard;
 const Styles = {
   cardStyle: {

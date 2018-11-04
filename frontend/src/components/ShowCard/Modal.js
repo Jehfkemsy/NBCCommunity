@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import Comments from '../ResponseCard/ResponseCard';
 
 class showModal extends React.Component {
   constructor(props) {
@@ -31,7 +32,17 @@ class showModal extends React.Component {
                 <img className="img-fluid" src={this.props.image} alt="" />
               </div>
               <div className="col-md-6">{this.props.buttonLabel}</div>
-              <div className="comments" />
+            </div>
+            <div className="row">
+              <div className="col-sm-10 comments">
+                <Comments
+                  userIcon="https://randomuser.me/api/portraits/men/61.jpg"
+                  comments="hello world"
+                  userName="hello"
+                  upIcon="https://image.flaticon.com/icons/svg/25/25629.svg"
+                  downIcon="https://image.flaticon.com/icons/svg/25/25649.svg"
+                />
+              </div>
             </div>
           </ModalBody>
           <ModalFooter>

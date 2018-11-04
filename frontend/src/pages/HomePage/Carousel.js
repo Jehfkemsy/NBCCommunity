@@ -132,12 +132,6 @@ class Caro extends Component {
     console.log('Data');
     console.log(data);
     return (
-      // <div className="scrolling-wrapper">
-      //     {this.props.telemundoShows.map(item => {
-      //       return <ShowCard image={item.image} title={item.title} description={item.description} />;
-      //     })}
-
-      // </div>
       <div>
         {this.props.contents.map(channel => {
           return (

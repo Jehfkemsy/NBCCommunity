@@ -1,7 +1,7 @@
 import React from 'react';
 import ResponseA from './../../store/action/ResponseA';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter,InputGroup, InputGroupAddon, Input  } from 'reactstrap';
-import ResponseCard from '../ResponseCard/ResponseCard';
+import ResponseCard from '../ResponseCard/ResponseCardMUI';
 import { connect } from 'react-redux';
 import DialogTitle from '@material-ui/core/DialogTitle';
 
@@ -64,7 +64,9 @@ class showModal extends React.Component {
             <div className="row">
               <div className="col-sm-10 comments">
                 {this.props.responses.map(response => {
+                  console.log(response)
                   return(
+                    
                     <div>
                     <ResponseCard id = {response.id} rating = {response.percentageRating} comments={response.comment}/>
                     </div>

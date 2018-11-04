@@ -39,7 +39,7 @@ class HomePC extends Component {
 
 const mapStateToProps = state => {
   return {
-    contents : state.ContentR.data
+    telemundo : state.ContentR.data
   };
 };
 

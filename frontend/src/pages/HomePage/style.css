@@ -1,13 +1,33 @@
-
-.card{
-    margin: 0 auto;
-    margin-top:20px;
+.hero {
+  background-color: grey;
 }
 
-.hero{
-    background-color: grey;
+.caro {
+  background-color: grey;
 }
 
-.caro{
-    background-color: grey;
+.scrolling-wrapper {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+}
+
+.card {
+  display: inline !important;
+}
+
+li {
+  margin: 0 3rem;
+}
+
+.card:hover .cards-text {
+  opacity: 1;
+  top: 0;
+}
+
+.cards-text {
+  position: absolute;
+  top: 20px;
+  opacity: 0;
+  transition: all 0.5s;
 }

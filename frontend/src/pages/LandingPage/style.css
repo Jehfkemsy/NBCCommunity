@@ -28,3 +28,40 @@
   top: 0;
   left: 0;
 }
+
+/* nav.navbar.navbar-light.bg-light.justify-content-between {
+  display: none;
+} */
+
+.btn-primary {
+  background-color: #400095 !important;
+  border-color: #400095 !important;
+}
+
+.btn-primary:hover {
+  background-color: #320072 !important;
+  border-color: #320072 !important;
+}
+
+.btn-info {
+  background-color: #66cedb !important;
+  border-color: #66cedb !important;
+}
+
+.btn-info:hover {
+  background-color: #52a2ac !important;
+  border-color: #52a2ac !important;
+}
+
+.logo {
+  width: 33.5rem;
+}
+
+button.btn-primary,
+button.btn-info {
+  padding: 17px 0;
+}
+
+label {
+  color: #400095;
+}

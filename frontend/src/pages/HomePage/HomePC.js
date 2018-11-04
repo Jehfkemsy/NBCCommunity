@@ -31,7 +31,7 @@ class HomePC extends Component {
   render() {
     return (
       <Container>
-        <GQL />
+        <GQL channel = "syfy" />
         <Hero />
         <Caro />
         <Caro />

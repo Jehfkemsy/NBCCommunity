@@ -47,7 +47,7 @@ class GQL extends Component {
     return (
       <Query
         query={GET_SHOWS}
-        variables={{ number: 1, network: 'syfy' }}
+        variables={{ number: 1, network: this.props.channel }}
       >
         {({ loading, error, data }) => {
           if (loading) return 'Loading...';

@@ -10,10 +10,7 @@ const ContentA = dispatch => {
       },
       getUSA: (data) => {
         dispatch({type:"GET_USA",data: data})
-      },
-      getContents: (data) => {
-        dispatch({type:""})
-      }
+      }    
     };
 };
 

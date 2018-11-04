@@ -2,8 +2,8 @@
   text-align: center;
 }
 
-.overlay{
-  color:rgba(100, 96, 170, 1);
+.overlay {
+  color: rgba(100, 96, 170, 1);
 }
 
 .App-logo {
@@ -45,4 +45,7 @@
 
 .nav-logo {
   width: 12rem;
+}
+.MuiPaper-root-99.MuiPaper-elevation1-102.MuiPaper-rounded-100.MuiCard-root-98 {
+  box-shadow: none !important;
 }

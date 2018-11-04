@@ -8,10 +8,12 @@ import Typography from "@material-ui/core/Typography";
 import ThumbUp from "@material-ui/icons/ThumbUp";
 import ThumbDown from "@material-ui/icons/ThumbDown";
 import IconButton from '@material-ui/core/IconButton';
+import updateRating from '../../utils/updateResponseRating'
 
 
 class ResponseCard extends React.Component { 
     render() {   
+        console.log(this.props.id)
         return (
             <div>
                 <Card>
@@ -21,11 +23,13 @@ class ResponseCard extends React.Component {
                             {this.props.comments}
                         </Typography>
                     </CardContent>    
-                    <IconButton onClick={this.increaseRating} color="primary" aria-label="Add to shopping cart">
+                    <IconButton onClick={() => updateRating(this.props.id,'like')} color="primary" aria-label="Add to shopping cart">
                         <ThumbUp />
+                        <p>{this.props.likes}</p>
                     </IconButton>      
-                    <IconButton onClick={this.decreaseRating} color="primary" aria-label="Add to shopping cart">
+                    <IconButton onClick={() => updateRating(this.props.id,'dislike')} color="primary" aria-label="Add to shopping cart">
                         <ThumbDown />
+                        <p>{this.props.dislikes}</p>
                     </IconButton>               
                                      
                     </CardActionArea>

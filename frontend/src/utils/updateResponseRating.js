@@ -1,6 +1,8 @@
 const axios = require('axios');
 
 let updateRating = async (id,rating) => {
+    console.log('updating')
+    console.log(id)
    let data = await axios.get('http://localhost:3001/api/responses/'+ id +'?access_token=1209600')
 
    data = data.data

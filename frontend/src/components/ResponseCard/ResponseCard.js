@@ -6,6 +6,8 @@ import {Col, Row} from 'reactstrap';
 
 
 const ResponseCard = ({ id,rating,userIcon, comments, userName}) => {
+    console.log('card')
+    console.log(rating)
     const upIcon = "https://image.flaticon.com/icons/svg/25/25330.svg"
     const downIcon = "https://image.flaticon.com/icons/svg/25/25243.svg"
   return (
@@ -21,7 +23,7 @@ const ResponseCard = ({ id,rating,userIcon, comments, userName}) => {
         </Media>
       </Col>
       <Col>
-        <Media onClick = {() => updateRating(id,'like')} style={Styles.upIcon} object src={upIcon} alt={upIcon} />
+        <Media onClick = {updateRating(id,'like')} style={Styles.upIcon} object src={upIcon} alt={upIcon} />
         <Media onClick = {() => updateRating(id,'dislike')} style={Styles.downIcon} object src={downIcon} alt={downIcon} />
       </Col>
       </Media>

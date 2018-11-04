@@ -42,7 +42,6 @@ class showModal extends React.Component {
   }
 
   handlePostResponse() {
-<<<<<<< HEAD
       let data = {
         percentageRating: 0,
         userId: "",
@@ -56,21 +55,6 @@ class showModal extends React.Component {
         decorations: true,
         views: 0
     }
-=======
-    let data = {
-      percentageRating: 0,
-      userId: '',
-      comment: this.state.currentComment,
-      image: this.props.image,
-      video: '',
-      type: '',
-      show: this.props.buttonLabel,
-      dislikes: 1,
-      likes: 1,
-      decorations: true,
-      views: 0
-    };
->>>>>>> master
 
     this.props.responseFn.postResponse(data);
   }
@@ -100,6 +84,8 @@ class showModal extends React.Component {
                     id={response.id}
                     rating={response.percentageRating}
                     comments={response.comment}
+                    likes= {response.likes}
+                    dislikes = {response.dislikes}
                   />
                 </div>
               );

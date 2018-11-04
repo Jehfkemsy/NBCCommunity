@@ -6,6 +6,7 @@ Full cards to display the shows
 import React, { Component, router } from 'react';
 import { Card, CardImg } from 'reactstrap';
 import PropTypes from 'prop-types';
+// import { Animated } from 'react-animated-css';
 
 const MediaCard = ({ image, title, description }) => {
   return (

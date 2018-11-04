@@ -18,20 +18,20 @@ const ResponseCard = (props) => {
 };
 export default ResponseCard;
 const Styles = {
-    cardStyle={
+    cardStyle :{
         height: 20,
         width: 'auto',
     },
-    userNameStyle={ fontSize: 14 },
-    upIcon={
+    userNameStyle:{ fontSize: 14 },
+    upIcon:{
         height: '50%',
         width: '50%'
     },
-    downIcon={
+    downIcon:{
         height: '50%',
         width: '50%'
     },
-    body ={
+    body :{
         textAlign: 'left',
         paddingLeft: 10,
         paddingTop: 5,

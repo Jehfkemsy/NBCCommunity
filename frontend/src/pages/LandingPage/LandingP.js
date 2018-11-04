@@ -97,7 +97,7 @@ class LandingPC extends Component {
       return <Redirect to="/home" />;
     } else {
       return (
-        <Container className="">
+        <Container className="landing_page">
           <img src={logo} alt="NBC hack logo" className="logo mb-5" />
           <Row className="mt-3">
             <Col sm={{ size: 6, offset: 3 }}>

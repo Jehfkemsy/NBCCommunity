@@ -8,22 +8,12 @@ import { Carousel } from 'react-responsive-carousel';
 import ShowCard from './../../components/ShowCard/ShowCard';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
-
 class Caro extends Component {
-   
-
   render() {
-
-// let data = [this.props.te]
-    console.log('Data')
     console.log(this.props.responses)
+    // let data = [this.props.te]
+    console.log('Data');
     return (
-      // <div className="scrolling-wrapper">
-      //     {this.props.telemundoShows.map(item => {
-      //       return <ShowCard image={item.image} title={item.title} description={item.description} />;
-      //     })}
-    
-      // </div>
       <div>
       {this.props.contents.map(channel => {
         return(
@@ -40,7 +30,7 @@ class Caro extends Component {
               console.log(responses)
 
               return(
-                <ShowCard  image = {show.image} title={show.title} description={show.description}></ShowCard>
+                <ShowCard responses = {responses} image = {show.image} title={show.title} description={show.description}></ShowCard>
               )
             })}
           </div>
@@ -54,7 +44,7 @@ class Caro extends Component {
 const mapStateToProps = state => {
   return {
     contents: state.ContentR.contents,
-    responses: state.ResponseR.responses   
+    responses: state.ResponseR.responses
   };
 };
 

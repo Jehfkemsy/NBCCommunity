@@ -13,9 +13,21 @@
 }
 
 .card {
-  display: inline;
+  display: inline !important;
 }
 
 li {
   margin: 0 3rem;
+}
+
+.card:hover .cards-text {
+  opacity: 1;
+  top: 0;
+}
+
+.cards-text {
+  position: absolute;
+  top: 20px;
+  opacity: 0;
+  transition: all 0.5s;
 }

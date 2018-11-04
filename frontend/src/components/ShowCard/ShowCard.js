@@ -4,22 +4,18 @@ Full cards to display the shows
     * on click onpen show page 
 */
 import React from 'react';
-import { Card, CardImg } from 'reactstrap';
+import { CardImg } from 'reactstrap';
 import PropTypes from 'prop-types';
 import ShowModal from './Modal';
+import Card from '@material-ui/core/Card';
+
+
 
 const MediaCard = ({ image, title, description, responses }) => {
   return (
     <Card style={cardStyle}>
-      <div className="card-details d-inline-block">
-        <div className="cards-text">
-          <ShowModal responses = {responses} buttonLabel={title} image={image} userName="test" />
-          <h1>{title}</h1>
-          <p>{description}</p>
-        </div>
-        <CardImg width="100%" height="100%" src={image} />
-        
-      </div>
+      <ShowModal responses={responses} buttonLabel={title} image={image} userName="test" />
+      <CardImg height='100%' width='100%' src={image} />
     </Card>
   );
 };
@@ -31,8 +27,11 @@ MediaCard.propTypes = {
 };
 
 const cardStyle = {
-  height: 200,
-  width: 150,
+  marginTop: 10,
+  marginLeft: 30,
+  marginBottom: 50,
+  height: '100%',
+  width: '27%',
   boxShadow: '1px 3px 1px',
   borderRadius: 10
 };

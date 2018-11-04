@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import ContentA from './../../store/action/ContentA';
 import ResponseA from './../../store/action/ResponseA';
-
+import Grid from '@material-ui/core/Grid';
 import Hero from './Hero';
 import { Container } from 'reactstrap';
 import './style.css';
@@ -27,11 +27,13 @@ class HomePC extends Component {
 
   render() {
     return (
-      <Container >
-        <GQL />
+
+
+      <Grid>
         <Hero />
+        <GQL />
         <Caro />
-      </Container>
+      </Grid>
     );
   }
 }

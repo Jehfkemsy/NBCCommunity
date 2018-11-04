@@ -5,13 +5,13 @@ const authInitState = {
 
 function AuthR(state = authInitState, action) {
   switch (action.type) {
-    case "LOGIN":
+    case 'LOGIN':
       return { ...state, auth: true };
-    case "SIGNUP_ERR":
-      return { ...state, auth_err: "Sign up failed" };
-    case "LOGIN_ERR":
-      return { ...state, auth_err: "Login failed" };
-    case "LOGOUT":
+    case 'SIGNUP_ERR':
+      return { ...state, auth_err: 'Sign up failed' };
+    case 'LOGIN_ERR':
+      return { ...state, auth_err: 'Login failed' };
+    case 'LOGOUT':
       return { ...state, auth: false };
     default:
       return state;

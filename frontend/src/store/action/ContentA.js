@@ -1,5 +1,6 @@
 import axios from 'axios';
 
+<<<<<<< HEAD
 const ContentA = dispatch => {
   return {
     getContents: channel => {
@@ -26,6 +27,13 @@ const ContentA = dispatch => {
                 imageId +
                 '',
               {
+=======
+
+const ContentA = (dispatch) => {
+    return {
+        getContents: (channel) => {
+            axios.get('https://stage-api.nbcuni.com/networks/'+ channel +'/j/shows/',{
+>>>>>>> f9cb5a7265977ab8ad315163bb75257c21ea8dfe
                 headers: {
                   api_key: 'B6JORCtfWI35R457al8N78n64aFSL6JI265U7DrZ'
                 }

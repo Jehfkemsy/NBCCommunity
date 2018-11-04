@@ -7,11 +7,6 @@
     "validateUpsert": true
   },
   "properties": {
-    "avgRating": {
-      "type": "number",
-      "required": true,
-      "default": 0
-    },
     "userId": {
       "type": "string",
       "required": true
@@ -43,16 +38,18 @@
     "decorations": {
       "type": "boolean"
     },
-    "numRatings": {
+    "likes": {
       "type": "number"
     },
     "id": {
       "type": "number",
       "required": true
     },
-    "totalRatings": {
-      "type": "number",
-      "required": true
+    "dislikes": {
+      "type": "number"
+    },
+    "percentageRating": {
+      "type": "number"
     }
   },
   "validations": [],

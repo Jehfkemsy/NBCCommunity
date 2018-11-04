@@ -7,10 +7,16 @@
     "axios": "^0.18.0",
     "bootstrap": "^4.1.3",
     "graphql": "^14.0.2",
+<<<<<<< HEAD
     "graphql-tag": "^2.10.0",
     "prop-types": "^15.6.2",
     "react": "^16.6.0",
     "react-apollo": "^2.2.4",
+=======
+    "prop-types": "^15.6.2",
+    "react": "^16.6.0",
+    "react-animated-css": "^1.0.4",
+>>>>>>> f9cb5a7265977ab8ad315163bb75257c21ea8dfe
     "react-dom": "^16.6.0",
     "react-redux": "^5.1.0",
     "react-responsive-carousel": "^3.1.43",
@@ -22,7 +28,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts build && cp -r build/ ../backend/client/",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

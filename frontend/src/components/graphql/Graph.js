@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import ContentA from './../../store/action/ContentA';
 import gql from 'graphql-tag';
 import { Query } from 'react-apollo';
 
@@ -61,4 +63,22 @@ class GQL extends Component {
   }
 }
 
-export default GQL;
+const mapStateToProps = state => {
+  return {
+    contents: state.ContentR.contents,
+    responses: state.ResponseR.responses
+  };
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    contentFn: ContentA(dispatch)
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(GQL);
+
+// export default GQL;

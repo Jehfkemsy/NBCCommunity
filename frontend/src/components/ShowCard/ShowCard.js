@@ -3,37 +3,35 @@ Full cards to display the shows
     * on mouse peak, shows title, and description 
     * on click onpen show page 
 */
-import React, { Component, router } from 'react'
+import React, { Component, router } from 'react';
 import { Card, CardImg } from 'reactstrap';
-import { Animated } from "react-animated-css";
-export default class MediaCard extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            Name: this.props.title,
-            Image: this.props.image,
-            Description: this.props.description,
-            id: this.props.id,
-            Seasons: this.props.Seasons,
-            Video: this.props.Video,
-            clicked: false,
+import PropTypes from 'prop-types';
 
-        }
-    };
+const MediaCard = ({ image, title, description }) => {
+  return (
+    <Card style={cardStyle}>
+      <div className="card-details d-inline-block">
+        <div className="cards-text">
+          <h1>{title}</h1>
+          <p>{description}</p>
+        </div>
+        <CardImg width="100%" height="100%" src={image} />
+      </div>
+    </Card>
+  );
+};
 
-    render() {
-        return (
-            <Animated animationInDelay={2} animationIn="slideInRight" animationOut="slideInRight">
-                <Card style={cardStyle}>
-                    {/* <img style={{ height: 300, width: 200 }} source={this.state.Image} alt={this.state.Name} /> */}
-                    <CardImg alt={this.state.Name} width="auto" height="auto" borderRadius={10} src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJLvh09sXH0OqJj00RJwbikO8tAZFMKIBZYG_fgqtGovnT6C_y" />
-                </Card>
-            </Animated>
-        )
-    }
-}
+MediaCard.propTypes = {
+  image: PropTypes.string,
+  title: PropTypes.string,
+  description: PropTypes.string
+};
 
 const cardStyle = {
-    height: "auto",
-    width: 350,
-}
+  height: 200,
+  width: 150,
+  boxShadow: '1px 3px 1px',
+  borderRadius: 10
+};
+
+export default MediaCard;

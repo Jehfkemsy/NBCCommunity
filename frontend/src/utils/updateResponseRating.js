@@ -5,28 +5,28 @@ let updateRating = async (id,rating) => {
 
    data = data.data
 
-   let{totalRatings,avgRating,numRatings,userId,comment,image,video,views,type,show,decorations} = data;
-    console.log('old rating: ' + avgRating);
-    numRatings ++;
+   let{percentageRating,likes,userId,comment,image,video,views,type,show,decorations,dislikes} = data;
+   
+   if(rating == 'like')
+    likes++
 
-    totalRatings += rating;
-
-    avgRating = totalRatings/numRatings
-
-    console.log('new rating: ' + avgRating)
+    else
+        dislikes ++
     
+    percentageRating = likes/dislikes;
+
     axios.put('http://localhost:3001/api/responses/'+ id +'?access_token=1209600',{
-        numRatings: numRatings,
-        avgRating: avgRating,
-        userId: userId,
-        comment: comment,
-        image: image,
-        video: video,
-        views: views,
-        type: type,
-        show: show,
-        decorations: decorations,
-        totalRatings: totalRatings
+        percentageRating,
+        userId,
+        comment,
+        image,
+        video,
+        views,
+        type,
+        show,
+        decorations,
+        dislikes,
+        likes,
     })
 }
 

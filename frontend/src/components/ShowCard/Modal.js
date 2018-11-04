@@ -35,16 +35,19 @@ class showModal extends React.Component {
             </div>
             <div className="row">
               <div className="col-sm-10 comments">
-                <Comments
-                  userIcon="https://randomuser.me/api/portraits/men/61.jpg"
-                  comments="hello world"
-                  userName="hello"
-                  upIcon="https://image.flaticon.com/icons/svg/25/25629.svg"
-                  downIcon="https://image.flaticon.com/icons/svg/25/25649.svg"
-                />
+            
               </div>
             </div>
           </ModalBody>
+          {this.props.responses.map(response => {
+            console.log('modal')
+            console.log(response)
+            return(
+              <div>
+              <Comments comments={response.comment}/>
+              </div>
+            )
+          })}
           <ModalFooter>
             <Button color="primary" onClick={this.toggle}>
               Comment

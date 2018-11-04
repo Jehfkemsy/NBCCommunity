@@ -34,7 +34,6 @@ class HomePC extends Component {
         <GQL />
         <Hero />
         <Caro />
-        <Caro />
       </Container>
     );
   }

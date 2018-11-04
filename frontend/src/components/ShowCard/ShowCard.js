@@ -9,16 +9,17 @@ import PropTypes from 'prop-types';
 // import { Animated } from 'react-animated-css';
 import ShowModal from './Modal';
 
-const MediaCard = ({ image, title, description }) => {
+const MediaCard = ({ image, title, description, responses }) => {
   return (
     <Card style={cardStyle}>
       <div className="card-details d-inline-block">
         <div className="cards-text">
-          <ShowModal buttonLabel={title} image={image} userName="test" />
+          <ShowModal responses = {responses} buttonLabel={title} image={image} userName="test" />
           <h1>{title}</h1>
           <p>{description}</p>
         </div>
         <CardImg width="100%" height="100%" src={image} />
+        
       </div>
     </Card>
   );

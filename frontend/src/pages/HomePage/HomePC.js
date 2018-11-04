@@ -1,15 +1,15 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import ShowCard from './../../components/ShowCard/ShowCard';
 import ContentA from './../../store/action/ContentA';
 import ResponseA from './../../store/action/ResponseA';
 import ResponseCards from './../../components/ResponseCard/ResponseCard';
 
 import Hero from './Hero';
-import {Container} from 'reactstrap';
+import { Container } from 'reactstrap';
 import './style.css';
 import Caro from './Carousel';
-
+import GQL from '../../components/graphql/Graph';
 /**
  * Description:
  * This is the Home route. Land here after login.
@@ -31,10 +31,10 @@ class HomePC extends Component {
   render() {
     return (
       <Container>
-        <Hero/>
+        <GQL />
+        <Hero />
         <Caro />
-        <Caro/>
-  
+        <Caro />
       </Container>
     );
   }
@@ -42,15 +42,14 @@ class HomePC extends Component {
 
 const mapStateToProps = state => {
   return {
-    telemundo : state.ContentR.data
+    telemundo: state.ContentR.data
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    contentFn : ContentA(dispatch),
+    contentFn: ContentA(dispatch),
     responseFn: ResponseA(dispatch)
-    
   };
 };
 

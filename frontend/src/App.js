@@ -8,12 +8,13 @@ import ResponseCard from './components/RespnseCard/ResponseCard';
 import ShowPage from './pages/ShowPage/ShowPage';
 import { ApolloProvider } from 'react-apollo';
 import ApolloClient from 'apollo-boost';
+import ShowPage from './pages/ShowPage/ShowPage';
+import GQL from './components/graphql/Graph';
 
 const client = new ApolloClient({
   uri: 'https://xyabwrrxxk.execute-api.us-east-1.amazonaws.com/stage',
   headers: { 'x-api-key': 'mX63Tp1jp4M3ExJyHutMqn3D7W9aN28lsJxWlV50' }
 });
-import ShowPage from './pages/ShowPage/ShowPage';
 
 class App extends Component {
   render() {
@@ -22,9 +23,10 @@ class App extends Component {
     };
     return (
       <ApolloProvider client={client}>
+        <GQL />
         <BrowserRouter>
           <div className="App">
-            <NavbarC />            
+            <NavbarC />
             <div style={margin}>
               <Switch>
                 <Route exact path="/" component={landingP} />

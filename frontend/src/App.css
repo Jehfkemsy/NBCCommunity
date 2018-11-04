@@ -30,3 +30,11 @@
     transform: rotate(360deg);
   }
 }
+
+.modal-dialog.show_content.modal-lg {
+  max-width: 96vw !important;
+}
+
+.modal-dialog.show_content.modal-lg .modal-content {
+  height: 95vh;
+}

@@ -1,20 +1,20 @@
-
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import { Media } from 'reactstrap';
-const ResponseCard = (props) => {
-    return (
-        <Media style={Styles.cardStyle}>
-            <Media left href="#">
-                <Media object data-src={props.userIcon} alt={props.userName} />
-            </Media>
-            <Media body style={Styles.body}>
-                {props.comments}
-            </Media>
-            <Media style={Styles.upIcon} object data-src={props.userIcon} alt={props.upIcon} />
-            <Media style={Styles.downIcon} object data-src={props.userIcon} alt={props.downIcon} />
+import PropTypes from 'prop-types';
 
-        </Media>
-    );
+const ResponseCard = ({ userIcon, comments, userName, upIcon, downIcon }) => {
+  return (
+    <Media style={Styles.cardStyle}>
+      <Media left href="#">
+        <Media object src={userIcon} alt={userName} className="rounded" />
+      </Media>
+      <Media body style={Styles.body}>
+        {comments}
+      </Media>
+      <Media style={Styles.upIcon} object src={upIcon} alt={upIcon} />
+      <Media style={Styles.downIcon} object src={downIcon} alt={downIcon} />
+    </Media>
+  );
 };
 export default ResponseCard;
 const Styles = {
@@ -39,6 +39,4 @@ const Styles = {
         fontSize: 12,
 
     }
-
-
-}
+  };

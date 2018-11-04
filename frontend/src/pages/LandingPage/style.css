@@ -54,8 +54,8 @@
   padding: 25px;
 }
 
-button.btn-primary,
-button.btn-info {
+.landing_page button.btn-primary,
+.landing_page button.btn-info {
   padding: 17px 0;
 }
 

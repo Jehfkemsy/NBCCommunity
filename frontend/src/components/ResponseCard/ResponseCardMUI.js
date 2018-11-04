@@ -1,14 +1,15 @@
-import React from 'react'
-import Card from "@material-ui/core/Card";
+import React from 'react';
+import Card from '@material-ui/core/Card';
 import { connect } from 'react-redux';
-import ResponseA from './../../store/action/ResponseA'
-import CardActionArea from "@material-ui/core/CardActionArea";
-import CardContent from "@material-ui/core/CardContent";
-import Typography from "@material-ui/core/Typography";
-import ThumbUp from "@material-ui/icons/ThumbUp";
-import ThumbDown from "@material-ui/icons/ThumbDown";
+import ResponseA from './../../store/action/ResponseA';
+import CardActionArea from '@material-ui/core/CardActionArea';
+import CardContent from '@material-ui/core/CardContent';
+import Typography from '@material-ui/core/Typography';
+import ThumbUp from '@material-ui/icons/ThumbUp';
+import ThumbDown from '@material-ui/icons/ThumbDown';
 import IconButton from '@material-ui/core/IconButton';
 import updateRating from '../../utils/updateResponseRating'
+
 
 
 class ResponseCard extends React.Component { 
@@ -38,15 +39,16 @@ class ResponseCard extends React.Component {
         )
     }
     
+
 }
 
 const mapDispatchToProps = dispatch => {
-    return {
-      responseFn: ResponseA(dispatch)
-    };
+  return {
+    responseFn: ResponseA(dispatch)
   };
-  
-  export default connect(
-    null,
-    mapDispatchToProps
-  )(ResponseCard);
+};
+
+export default connect(
+  null,
+  mapDispatchToProps
+)(ResponseCard);

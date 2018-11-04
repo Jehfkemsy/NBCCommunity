@@ -45,7 +45,7 @@ class GQL extends Component {
     return (
       <Query
         query={GET_SHOWS}
-        variables={{ number: 5, network: 'telemundocms' }}
+        variables={{ number: 25, network: 'telemundocms' }}
       >
         {({ loading, error, data }) => {
           if (loading) return 'Loading...';

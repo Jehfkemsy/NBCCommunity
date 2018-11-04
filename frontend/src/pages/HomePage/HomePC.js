@@ -30,11 +30,11 @@ class HomePC extends Component {
 
   render() {
     return (
-      <Container>
+      <Container className= 'caro'>
         <GQL />
         <Hero />
         <Caro />
-        <Caro />
+        
       </Container>
     );
   }

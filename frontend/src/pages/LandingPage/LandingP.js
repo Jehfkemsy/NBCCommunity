@@ -97,10 +97,12 @@ class LandingPC extends Component {
       return <Redirect to="/home" />;
     } else {
       return (
-        <Container className="">
-          <img src={logo} alt="NBC hack logo" className="logo mb-5" />
+        <React.Fragment>
+          <div className="background" />
+        <Container className="containerL">
           <Row className="mt-3">
-            <Col sm={{ size: 6, offset: 3 }}>
+            <Col className ='card' sm={{ size: 6, offset: 3 }}>
+              <img src={logo} alt="NBC hack logo" className="logo mb-5" />
               <Form>
                 <div className="form-group text-left">
                   <Label htmlFor="login_email">Email address</Label>
@@ -183,8 +185,8 @@ class LandingPC extends Component {
               </Modal>
             </Col>
           </Row>
-          <div className="background" />
         </Container>
+        </React.Fragment>
       );
     }
   }

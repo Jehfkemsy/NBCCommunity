@@ -2,12 +2,9 @@
 .font {
   font-family: 'Chivo', sans-serif;
 }
-.containerL {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-content: center;
-  margin-top: 5vh;
+.card{
+  margin-bottom: 5vh;
+  padding-bottom: 5vh;
 }
 .buttons {
   display: inline-block;
@@ -16,14 +13,13 @@
 }
 
 .background {
-  opacity: 0.2;
+  opacity: 0.5;
   z-index: -5;
   height: 100vh;
   width: 100vw;
   background-image: url(https://images.unsplash.com/photo-1534834128485-00d164a7cf47?ixlib=rb-0.3.5…EyMDd9&s=e41d164…&auto=format&fit=crop&w=3300&q=80);
   -webkit-filter: blur(1px);
   filter: blur(1px);
-  background-size: cover;
   position: absolute;
   top: 0;
   left: 0;
@@ -55,6 +51,7 @@
 
 .logo {
   width: 33.5rem;
+  padding: 25px;
 }
 
 button.btn-primary,

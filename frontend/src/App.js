@@ -18,7 +18,7 @@ const client = new ApolloClient({
 class App extends Component {
   render() {
     let margin = {
-      marginTop: '10%'
+      marginTop: '3%'
     };
     return (
       <ApolloProvider client={client}>

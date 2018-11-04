@@ -117,7 +117,7 @@ class Caro extends Component {
     ];
 // let data = [this.props.te]
     console.log('Data')
-    console.log(data)
+    console.log(this.props.contents)
     return (
       // <div className="scrolling-wrapper">
       //     {this.props.telemundoShows.map(item => {

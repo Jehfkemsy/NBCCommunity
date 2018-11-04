@@ -7,7 +7,7 @@ let updateRating = async (id,rating) => {
 
    let{percentageRating,likes,userId,comment,image,video,views,type,show,decorations,dislikes} = data;
    
-   if(rating == 'like')
+   if(rating == true)
     likes++
 
     else

@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import gql from 'graphql-tag';
+import { connect } from 'react-redux';
 import { Query } from 'react-apollo';
+import ContentA from './../../store/action/ContentA';
 
 const GET_SHOWS = gql`
   query shows($number: Int, $network: String) {
@@ -54,6 +56,7 @@ class GQL extends Component {
           //REDUX THIS THING PLEASE DATA SHOULD BE PASSED TO ACTION IF IT IS TO WORK
           //data
           console.log(data);
+          // this.props.contentFn.getContents(data);
           return <React.Fragment />;
         }}
       </Query>
@@ -61,4 +64,22 @@ class GQL extends Component {
   }
 }
 
+// const mapStateToProps = state => {
+//   return {
+     
+//   };
+// };
+
+// const mapDispatchToProps = dispatch => {
+//   return {
+//     contentFn: ContentA(dispatch)
+//   };
+// };
+
+// export default connect(
+//   mapStateToProps,
+//   mapDispatchToProps
+// )(GQL);
+
 export default GQL;
+

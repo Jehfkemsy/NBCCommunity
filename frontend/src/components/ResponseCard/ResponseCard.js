@@ -1,9 +1,14 @@
 import React, { Component } from 'react';
 import { Media } from 'reactstrap';
 import PropTypes from 'prop-types';
+import updateRating from '../../utils/updateResponseRating'
 
-const ResponseCard = ({ userIcon, comments, userName, upIcon, downIcon }) => {
+
+const ResponseCard = ({ id,rating,userIcon, comments, userName, upIcon, downIcon }) => {
+    console.log('this is response')
+    console.log(comments)
   return (
+    <div>
     <Media style={Styles.cardStyle}>
       <Media left href="#">
         <Media object src={userIcon} alt={userName} className="rounded" />
@@ -11,9 +16,10 @@ const ResponseCard = ({ userIcon, comments, userName, upIcon, downIcon }) => {
       <Media body style={Styles.body}>
         {comments}
       </Media>
-      <Media style={Styles.upIcon} object src={upIcon} alt={upIcon} />
-      <Media style={Styles.downIcon} object src={downIcon} alt={downIcon} />
+      <Media onClick = {() => updateRating(id,'like')} style={Styles.upIcon} object src={upIcon} alt={upIcon} />
+      <Media onClick = {() => updateRating(id,'dislike')} style={Styles.downIcon} object src={downIcon} alt={downIcon} />
     </Media>
+    </div>
   );
 };
 export default ResponseCard;
@@ -37,6 +43,19 @@ const Styles = {
         paddingTop: 5,
         textWrap: 'wrap',
         fontSize: 12,
+        "background-color": "red" 
 
     }
-  };
+
+}
+
+ResponseCard.propTypes = {
+  userIcon: PropTypes.string,
+  comments: PropTypes.string,
+  userName: PropTypes.string,
+  upIcon: PropTypes.bool,
+  downIcon: PropTypes.bool
+};
+
+
+

@@ -1,1 +1,2 @@
-export const CONTENT_LOADING = 'LOGIN';
+export const LOGIN = 'LOGIN';
+export const LOGOUT = 'LOGOUT';

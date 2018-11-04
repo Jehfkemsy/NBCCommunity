@@ -1,7 +1,7 @@
 import React from 'react';
 import ResponseA from './../../store/action/ResponseA';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter,InputGroup, InputGroupAddon, Input  } from 'reactstrap';
-import Comments from '../ResponseCard/ResponseCard';
+import ResponseCard from '../ResponseCard/ResponseCard';
 import { connect } from 'react-redux';
 
 class showModal extends React.Component {
@@ -73,13 +73,16 @@ class showModal extends React.Component {
                   console.log(response)
                   return(
                     <div>
-                    <Comments id = {response.id} rating = {response.percentageRating} comments={response.comment}/>
+                    <ResponseCard id = {response.id} rating = {response.percentageRating} comments={response.comment}/>
                     </div>
                   )
                 })}
               </div>
             </div>
-                <div>
+                
+          </ModalBody>          
+          <ModalFooter>
+          <div>
                       <InputGroup>
               <InputGroupAddon addonType="prepend">@</InputGroupAddon>
               <Input
@@ -89,8 +92,6 @@ class showModal extends React.Component {
                 onChange={evt => this.handleCommentOnChange(evt)} />
             </InputGroup>
                 </div>
-          </ModalBody>          
-          <ModalFooter>
             <Button color="primary" onClick={this.handlePostResponse}>
               Comment
             </Button>

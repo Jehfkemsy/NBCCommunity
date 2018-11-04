@@ -10,7 +10,7 @@ const showInitState = {
       },
       {
         image:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqqgk89OAFEPdit50zMnvmFDlDsPgDpnNioGzPggiOzQLPlx1cjA',
-        title: 'The voice',
+        title: 'Pretty Strong',
         description: 'TelemundoShows'
       },
       { image:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqqgk89OAFEPdit50zMnvmFDlDsPgDpnNioGzPggiOzQLPlx1cjA',

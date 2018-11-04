@@ -17,15 +17,17 @@ const client = new ApolloClient({
 
 class App extends Component {
   render() {
-    let margin = {
-      marginTop: '10%'
-    };
+    // let margin = {
+    //   marginTop: '3%'
+    // };
     return (
       <ApolloProvider client={client}>
         <BrowserRouter>
-          <div className="App">
+          
+          
+            
+            <div >
             <NavbarC />
-            <div style={margin}>
               <Switch>
                 <Route exact path="/" component={landingP} />
                 <Route path="/home" component={HomePC} />
@@ -33,7 +35,8 @@ class App extends Component {
                 <Route exact path="/show/:id" component={ShowPage} />
               </Switch>
             </div>
-          </div>
+          
+          
         </BrowserRouter>
       </ApolloProvider>
     );

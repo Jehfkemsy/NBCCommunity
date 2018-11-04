@@ -97,10 +97,11 @@ class LandingPC extends Component {
       return <Redirect to="/home" />;
     } else {
       return (
-        <Container className="landing_page">
-          <img src={logo} alt="NBC hack logo" className="logo mb-5" />
+        <div className="background">
+        <Container className="containerL">
           <Row className="mt-3">
-            <Col sm={{ size: 6, offset: 3 }}>
+            <Col className ='card' sm={{ size: 6, offset: 3 }}>
+              <img src={logo} alt="NBC hack logo" className="logo mb-5" />
               <Form>
                 <div className="form-group text-left">
                   <Label htmlFor="login_email">Email address</Label>
@@ -131,14 +132,22 @@ class LandingPC extends Component {
                     Check me out
                   </label>
                 </div>
-                <Button onClick={this.login} block color="primary" className="mt-4">
-                  Login
-                </Button>
+               <Row>
+               <Col>
+                  <Button onClick={this.login} block color="primary" className="mt-4">
+                    Login
+                  </Button>
+                </Col>
+                <Col>
+                  <Button block color="info" onClick={this.toggle} className="mt-4">
+                    Sign Up
+                  </Button>
+                </Col>
+               </Row>
               </Form>
               <hr className="mt-5" />
-              <Button block color="info" onClick={this.toggle} className="mt-5">
-                Sign Up
-              </Button>
+              {/* <p>UPE + 1</p> */}
+              
               <Modal
                 size="lg"
                 isOpen={this.state.modal}
@@ -172,7 +181,7 @@ class LandingPC extends Component {
                     </div>
                   </form>
                 </ModalBody>
-                <ModalFooter>
+                <ModalFooter >
                   <Button color="primary" onClick={this.signup}>
                     Submit
                   </Button>{' '}
@@ -183,8 +192,8 @@ class LandingPC extends Component {
               </Modal>
             </Col>
           </Row>
-          <div className="background" />
         </Container>
+        </div>
       );
     }
   }

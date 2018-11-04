@@ -9,103 +9,104 @@ import Grid from '@material-ui/core/Grid';
 
 class Caro extends Component {
   state = {
-    contents: [[{
-      title: "",
-      image: "",
-      description: ""
-    }],
-    [{
-      title: "",
-      image: "",
-      description: ""
-    }],
-    [{
-      title: "",
-      image: "",
-      description: ""
-    }]
+    contents: [
+      [
+        {
+          title: '',
+          image: '',
+          description: ''
+        }
+      ],
+      [
+        {
+          title: '',
+          image: '',
+          description: ''
+        }
+      ],
+      [
+        {
+          title: '',
+          image: '',
+          description: ''
+        }
+      ]``
     ],
     telemundoLoaded: false,
     syfyLoaded: false,
     usaLoaded: false
-  }
+  };
 
   componentDidUpdate(prevProp) {
     if (prevProp.telemundoShows !== this.props.telemundoShows) {
-      let telemundoReform = this.remap(this.props.telemundoShows, "Telemundo")
-      let syfyReform = this.remap(this.props.syfyShows, "SYFY")
-      let usaReform = this.remap(this.props.usaShows, "USA")
-      let tmp = [telemundoReform, syfyReform, usaReform]
-      this.setState({ contents: tmp })
-      this.setState({ telemundoLoaded: true })
+      let telemundoReform = this.remap(this.props.telemundoShows, 'Telemundo');
+      let syfyReform = this.remap(this.props.syfyShows, 'SYFY');
+      let usaReform = this.remap(this.props.usaShows, 'USA');
+      let tmp = [telemundoReform, syfyReform, usaReform];
+      this.setState({ contents: tmp });
+      this.setState({ telemundoLoaded: true });
     }
 
     if (prevProp.syfyShows !== this.props.syfyShows) {
-      let telemundoReform = this.remap(this.props.telemundoShows, "Telemundo")
-      let syfyReform = this.remap(this.props.syfyShows, "SYFY")
-      let usaReform = this.remap(this.props.usaShows, "USA")
-      let tmp = [telemundoReform, syfyReform, usaReform]
-      this.setState({ contents: tmp })
-      this.setState({ syfyLoaded: true })
+      let telemundoReform = this.remap(this.props.telemundoShows, 'Telemundo');
+      let syfyReform = this.remap(this.props.syfyShows, 'SYFY');
+      let usaReform = this.remap(this.props.usaShows, 'USA');
+      let tmp = [telemundoReform, syfyReform, usaReform];
+      this.setState({ contents: tmp });
+      this.setState({ syfyLoaded: true });
     }
     if (prevProp.usaShows !== this.props.usaShows) {
-      let telemundoReform = this.remap(this.props.telemundoShows, "Telemundo")
-      let syfyReform = this.remap(this.props.syfyShows, "SYFY")
-      let usaReform = this.remap(this.props.usaShows, "USA")
-      let tmp = [telemundoReform, syfyReform, usaReform]
-      this.setState({ contents: tmp })
-      this.setState({ usaLoaded: true })
+      let telemundoReform = this.remap(this.props.telemundoShows, 'Telemundo');
+      let syfyReform = this.remap(this.props.syfyShows, 'SYFY');
+      let usaReform = this.remap(this.props.usaShows, 'USA');
+      let tmp = [telemundoReform, syfyReform, usaReform];
+      this.setState({ contents: tmp });
+      this.setState({ usaLoaded: true });
     }
   }
 
-  remap = (src, channel) => {
+  remap = src => {
     return src.map(show => {
       return {
         title: show.attributes.name,
         image: show.relationships.media.data[0].relationships.image.data.attributes.path,
-        description: show.attributes.description,
-        channel: channel
-      }
+        description: show.attributes.description
+      };
     });
-  }
-
+  };
 
   render() {
+    console.log(this.state.contents);
     return (
+      <div>
+        {this.state.telemundoLoaded && this.state.syfyLoaded && this.state.usaLoaded
+          ? this.state.contents.map(channel => {
+              return (
+                <div className="scrolling-wrapper">
+                  <h1>{channel[0].channel}</h1>
+                  {channel.map(show => {
+                    let responses = [];
 
-      <div style={{ paddingTop: 30 }}>
-        {this.state.telemundoLoaded &&
-          this.state.syfyLoaded &&
-          this.state.usaLoaded ? this.state.contents.map(channel => {
-            return (
-              <Grid container spacing={20} direction={'row'}>
-                <Grid item xs={4}>
-                  <div style={{ alignItems: 'center' }} className="scrolling-wrapper">
+                    this.props.responses.map(response => {
+                      if (response.show === show.title) responses.push(response);
+                    });
 
-                    <h1>{channel[0].channel}</h1>
-                    {channel.map(show => {
-                      let responses = [];
-                      this.props.responses.map(response => {
-                        if (response.show === show.title)
-                          responses.push(response)
-                      })
-                      return (
-                        <ShowCard key={show.image} responses={responses} image={show.image} title={show.title} description={show.description}></ShowCard>
-                      )
-                    })}
-
-                  </div>
-                </Grid>
-              </Grid>
-
-
-            )
-          }
-          )
-          : console.log("Empty channel list")
-        }
+                    return (
+                      <ShowCard
+                        className="card"
+                        key={show.image}
+                        responses={responses}
+                        image={show.image}
+                        title={show.title}
+                        description={show.description}
+                      />
+                    );
+                  })}
+                </div>
+              );
+            })
+          : console.log('Empty channel list')}
       </div>
-
     );
   }
 }

@@ -59,8 +59,46 @@ img.img-fluid {
   width: 400px;
 }
 
-h2.MuiTypography-root-166.MuiTypography-title-172 {
+.h2_title h2 {
   font-size: 4rem;
   font-weight: 300;
   text-align: center;
+}
+
+.row.half_row {
+  margin-bottom: 3rem;
+}
+
+p.desc_p {
+  font-size: 1.4rem;
+  padding: 0 63px 0 0;
+}
+
+ul.modal_btns,
+ul.modal_btns li {
+  display: inline-block;
+}
+
+ul.modal_btns li:nth-child(1) {
+  margin-right: 3rem;
+}
+
+ul.modal_btns button.btn {
+  width: 180px;
+  height: 50px;
+}
+
+.MuiPaper-root-99.MuiPaper-elevation1-102.MuiPaper-rounded-100.MuiCard-root-98.show_card_modal {
+  width: 100% !important;
+  box-shadow: none;
+}
+
+.MuiCardContent-root-201 {
+  padding: 0;
+}
+
+.col-sm-10.offset-sm-1.comments {
+  height: 299px;
+  overflow-y: auto;
+  max-height: 150px;
 }

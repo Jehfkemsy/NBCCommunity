@@ -47,3 +47,20 @@ img {
 /* .top{
     top: 20px;
 } */
+
+.MuiDialog-paperWidthSm-140 {
+  max-width: 97vw !important;
+  max-height: 100vh !important;
+  height: 96vh;
+  width: 92vw;
+}
+
+img.img-fluid {
+  width: 400px;
+}
+
+h2.MuiTypography-root-166.MuiTypography-title-172 {
+  font-size: 4rem;
+  font-weight: 300;
+  text-align: center;
+}

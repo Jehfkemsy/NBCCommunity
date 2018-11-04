@@ -68,7 +68,7 @@ class showModal extends React.Component {
                   return(
                     
                     <div>
-                    <ResponseCard id = {response.id} rating = {response.percentageRating} comments={response.comment}/>
+                    <ResponseCard likes = {response.likes} dislikes = {response.dislikes} id = {response.id} rating = {response.percentageRating} comments={response.comment}/>
                     </div>
                   )
                 })}

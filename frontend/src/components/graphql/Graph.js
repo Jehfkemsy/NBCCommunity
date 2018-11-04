@@ -45,9 +45,10 @@ class GQL extends Component {
   render() {
     // the variables prop can be programatically set up if wanted to by redux, I guess.
     return (
+      <div>
       <Query
         query={GET_SHOWS}
-        variables={{ number: 1, network: this.props.channel }}
+        variables={{ number: 1, network: "telemundocms" }}
       >
         {({ loading, error, data }) => {
           if (loading) return 'Loading...';
@@ -57,10 +58,45 @@ class GQL extends Component {
           //data
           console.log("Inside GQL")
           console.log(data.shows.data);
-          this.props.contentFn.getSyfy(data.shows.data);
+          this.props.contentFn.getTelemundo(data.shows.data);
           return <React.Fragment />;
         }}
       </Query>
+
+      <Query
+      query={GET_SHOWS}
+      variables={{ number: 1, network: "syfy" }}
+      >
+      {({ loading, error, data }) => {
+        if (loading) return 'Loading...';
+        if (error) return `Error! ${error.message}`;
+
+        //REDUX THIS THING PLEASE DATA SHOULD BE PASSED TO ACTION IF IT IS TO WORK
+        //data
+        console.log("Inside GQL")
+        console.log(data.shows.data);
+        this.props.contentFn.getSyfy(data.shows.data);
+        return <React.Fragment />;
+      }}
+      </Query>
+
+       <Query
+        query={GET_SHOWS}
+        variables={{ number: 1, network: "usa" }}
+        >
+        {({ loading, error, data }) => {
+          if (loading) return 'Loading...';
+          if (error) return `Error! ${error.message}`;
+
+        //REDUX THIS THING PLEASE DATA SHOULD BE PASSED TO ACTION IF IT IS TO WORK
+        //data
+        console.log("Inside GQL")
+        console.log(data.shows.data);
+        this.props.contentFn.getUSA(data.shows.data);
+        return <React.Fragment />;
+      }}
+      </Query>
+    </div>
     );
   }
 }

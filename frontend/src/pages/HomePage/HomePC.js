@@ -32,6 +32,7 @@ class HomePC extends Component {
     return (
       <Container>
         <GQL channel = "syfy" />
+
         <Hero />
         <Caro />
         <Caro />

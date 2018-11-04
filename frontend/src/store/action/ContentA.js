@@ -1,36 +1,11 @@
-import axios from 'axios';
+
 
 const ContentA = dispatch => {
-  //   return {
-  //     getContents: channel => {
-  //       axios.get(
-  //         'https://stage-api.nbcuni.com/networks/' + channel + '/j/shows/',
-  //         {
-  //           headers: {
-  //             api_key: 'B6JORCtfWI35R457al8N78n64aFSL6JI265U7DrZ'
-  //           }
-  //         }
-  //       );
-  //       console.log('added image');
-  //       let imageUrl = imageObj.data.data.attributes.path;
-  //       //individual show data
-  //       let show = {
-  //         id: showData.id,
-  //         name: showData.attributes.shortTitle,
-  //         description: showData.attributes.description,
-  //         image: imageUrl
-  //       };
-  //       console.log(show);
-  //       shows.push(show);
-  //       if (channel === 'syfy') {
-  //         dispatch({ type: 'GET_SYFY', data: shows });
-  //       } else if (channel === 'telemundo') {
-  //         dispatch({ type: 'GET_TELEMUNDO', data: shows });
-  //       } else if (channel === 'usa') {
-  //         dispatch({ type: 'GET_USA', data: shows });
-  //       }
-  //     }
-  //   };
+    return {
+      getContents: (data) => {
+        dispatch({type:"GET_CONTENT",data: data})
+      }
+    };
 };
 
 export default ContentA;

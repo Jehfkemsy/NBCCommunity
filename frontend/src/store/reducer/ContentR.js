@@ -98,17 +98,9 @@ const showInitState = {
 
   function ContentR(state = showInitState, action) {
     switch (action.type) {
-      case "GET_SYFY": 
+      case "GET_CONTENT": 
         return { ...state, 
-          syfyShows: state.syfyShows.concat(action.syfyShows)                  
-        };
-      case "GET_TELEMUNDO":
-        return { ...state,
-          telemundoShows: state.telemundoShows.concat(action.telemundoShows)
-        };
-      case "GET_USA":
-        return { ...state,
-          usaShows: state.usaShows.concat(action.usaShows) 
+          contents: action.data                  
         };
       default:
         return state;

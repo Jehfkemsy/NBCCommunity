@@ -8,32 +8,25 @@
   },
   "properties": {
     "userId": {
-      "type": "string",
-      "required": true
+      "type": "string"
     },
     "comment": {
-      "type": "string",
-      "required": true
+      "type": "string"
     },
     "image": {
-      "type": "string",
-      "required": true
+      "type": "string"
     },
     "video": {
-      "type": "string",
-      "required": true
+      "type": "string"
     },
     "views": {
-      "type": "number",
-      "required": true
+      "type": "number"
     },
     "type": {
-      "type": "string",
-      "required": true
+      "type": "string"
     },
     "show": {
-      "type": "string",
-      "required": true
+      "type": "string"
     },
     "decorations": {
       "type": "boolean"
@@ -42,8 +35,7 @@
       "type": "number"
     },
     "id": {
-      "type": "number",
-      "required": true
+      "type": "number"
     },
     "dislikes": {
       "type": "number"

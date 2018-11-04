@@ -55,5 +55,5 @@ ResponseCard.propTypes = {
   downIcon: PropTypes.bool
 };
 
-  };
+
 

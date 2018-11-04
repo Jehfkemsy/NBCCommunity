@@ -21,6 +21,9 @@ class ShowPage extends Component {
     console.log(this.props.match.params.id);
   }
 
+  
+
+
   render() {
     return (
       <div>

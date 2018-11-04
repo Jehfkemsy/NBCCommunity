@@ -2,16 +2,20 @@ const responseInitState = {
     response: []
   };
   
-  function ContentR(state = responseInitState, action) {
+  function ResponseR(state = responseInitState, action) {
     switch (action.type) {
       case "GET_RESPONSE": 
         return { ...state, 
+<<<<<<< Updated upstream
           response: action.data
+=======
+          response: action.data      
+>>>>>>> Stashed changes
         };
       default:
         return state;
     }
   }
   
-  export default ContentR;
+  export default ResponseR;
   

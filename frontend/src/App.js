@@ -4,7 +4,6 @@ import NavbarC from './components/Navbar/NavbarC';
 import HomePC from './pages/HomePage/HomePC';
 import landingP from './pages/LandingPage/LandingP';
 import './App.css';
-<<<<<<< HEAD
 import ResponseCard from './components/RespnseCard/ResponseCard';
 import ShowPage from './pages/ShowPage/ShowPage';
 import { ApolloProvider } from 'react-apollo';
@@ -14,9 +13,7 @@ const client = new ApolloClient({
   uri: 'https://xyabwrrxxk.execute-api.us-east-1.amazonaws.com/stage',
   headers: { 'x-api-key': 'mX63Tp1jp4M3ExJyHutMqn3D7W9aN28lsJxWlV50' }
 });
-=======
 import ShowPage from './pages/ShowPage/ShowPage';
->>>>>>> f9cb5a7265977ab8ad315163bb75257c21ea8dfe
 
 class App extends Component {
   render() {

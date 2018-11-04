@@ -38,3 +38,7 @@
 .modal-dialog.show_content.modal-lg .modal-content {
   height: 95vh;
 }
+
+.nav-logo {
+  width: 12rem;
+}

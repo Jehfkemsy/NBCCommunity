@@ -1,7 +1,7 @@
 import LOGOUT from '../types/types';
 
 const authInitState = {
-  auth: true,
+  auth: false,
   auth_err: false
 };
 

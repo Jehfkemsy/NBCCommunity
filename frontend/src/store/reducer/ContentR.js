@@ -1,4 +1,7 @@
 const showInitState = {
+  telemundoShows: [],
+  syfyShows: [],
+  usaShows:[],
   contents: [
     [
       { image:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqqgk89OAFEPdit50zMnvmFDlDsPgDpnNioGzPggiOzQLPlx1cjA',
@@ -98,18 +101,21 @@ const showInitState = {
 
   function ContentR(state = showInitState, action) {
     switch (action.type) {
-      case "GET_SYFY": 
+      case "GET_TELEMUNDO": 
+        // console.log(action.data)
         return { ...state, 
-          syfyShows: state.syfyShows.concat(action.syfyShows)                  
+          telemundoShows: action.data                            
         };
-      case "GET_TELEMUNDO":
-        return { ...state,
-          telemundoShows: state.telemundoShows.concat(action.telemundoShows)
-        };
-      case "GET_USA":
-        return { ...state,
-          usaShows: state.usaShows.concat(action.usaShows) 
-        };
+      case "GET_SYFY": 
+      // console.log(action.data)
+      return { ...state, 
+        syfyShows: action.data                            
+      };
+      case "GET_USA": 
+      // console.log(action.data)
+      return { ...state, 
+        usaShows: action.data                            
+      };
       default:
         return state;
     }

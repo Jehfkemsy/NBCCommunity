@@ -35,19 +35,19 @@ class showModal extends React.Component {
             </div>
             <div className="row">
               <div className="col-sm-10 comments">
-            
+                {this.props.responses.map(response => {
+                  console.log('modal')
+                  console.log(response)
+                  return(
+                    <div>
+                    <Comments id = {response.id} rating = {response.percentageRating} comments={response.comment}/>
+                    </div>
+                  )
+                })}
               </div>
             </div>
-          </ModalBody>
-          {this.props.responses.map(response => {
-            console.log('modal')
-            console.log(response)
-            return(
-              <div>
-              <Comments id = {response.id} rating = {response.percentageRating} comments={response.comment}/>
-              </div>
-            )
-          })}
+
+          </ModalBody>          
           <ModalFooter>
             <Button color="primary" onClick={this.toggle}>
               Comment

@@ -1,5 +1,5 @@
 const authInitState = {
-  auth: false,
+  auth: true,
   auth_err: false
 };
 

@@ -5,7 +5,7 @@ Full cards to display the shows
 */
 import React, { Component, router } from 'react'
 import { Card, CardImg } from 'reactstrap';
-
+import { Animated } from "react-animated-css";
 export default class MediaCard extends React.Component {
     constructor(props) {
         super(props);
@@ -23,16 +23,17 @@ export default class MediaCard extends React.Component {
 
     render() {
         return (
-            <Card style={cardStyle}>
-                {/* <img style={{ height: 300, width: 200 }} source={this.state.Image} alt={this.state.Name} /> */}
-                <CardImg width="100%" height="100%" src="https://s.newsweek.com/sites/www.newsweek.com/files/styles/embed-lg/public/2018/04/18/voice-2018-results-top-12-live-playoffs-who-saved-eliminated-songs-voting-app-itunes_1.jpg"/>
-            </Card>
+            <Animated animationInDelay={2} animationIn="slideInRight" animationOut="slideInRight">
+                <Card style={cardStyle}>
+                    {/* <img style={{ height: 300, width: 200 }} source={this.state.Image} alt={this.state.Name} /> */}
+                    <CardImg alt={this.state.Name} width="auto" height="auto" borderRadius={10} src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJLvh09sXH0OqJj00RJwbikO8tAZFMKIBZYG_fgqtGovnT6C_y" />
+                </Card>
+            </Animated>
         )
     }
 }
 
 const cardStyle = {
-    height: 200,
-    width: 150,
-    boxShadow: "1px 3px 1px", borderRadius: 10,
+    height: "auto",
+    width: 350,
 }

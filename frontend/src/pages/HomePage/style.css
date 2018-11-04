@@ -25,9 +25,18 @@ li {
   top: 0;
 }
 
+
+img {
+    width: 20%
+}
+
 .cards-text {
   position: absolute;
   top: 20px;
   opacity: 0;
   transition: all 0.5s;
+}
+
+.top{
+    top: 20px;
 }

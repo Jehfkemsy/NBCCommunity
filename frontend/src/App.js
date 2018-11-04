@@ -4,7 +4,7 @@ import NavbarC from './components/Navbar/NavbarC';
 import HomePC from './pages/HomePage/HomePC';
 import landingP from './pages/LandingPage/LandingP';
 import './App.css';
-import ResponseCard from './components/RespnseCard/ResponseCard';
+import ResponseCard from './components/ResponseCard/ResponseCard';
 import ShowPage from './pages/ShowPage/ShowPage';
 
 class App extends Component {

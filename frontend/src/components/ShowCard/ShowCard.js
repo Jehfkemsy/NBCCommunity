@@ -50,6 +50,7 @@ export default class MediaCard extends Component {
             userName="test"
             openDialog={this.handleModalOpen}
             handleCloseDialog={this.handleModalClose}
+            description={this.props.description}
           />
         </Dialog>
       </div>

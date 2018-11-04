@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Media } from 'reactstrap';
+import { Media, Form} from 'reactstrap';
 import PropTypes from 'prop-types';
 import updateRating from '../../utils/updateResponseRating'
 
@@ -19,6 +19,10 @@ const ResponseCard = ({ id,rating,userIcon, comments, userName, upIcon, downIcon
       <Media onClick = {() => updateRating(id,'like')} style={Styles.upIcon} object src={upIcon} alt={upIcon} />
       <Media onClick = {() => updateRating(id,'dislike')} style={Styles.downIcon} object src={downIcon} alt={downIcon} />
     </Media>
+    <div >      
+
+    </div>
+  
     </div>
   );
 };

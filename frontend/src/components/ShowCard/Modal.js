@@ -1,6 +1,6 @@
 import React from 'react';
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import ResponseA from './../../store/action/ResponseA';
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter,InputGroup, InputGroupAddon, Input  } from 'reactstrap';
 import Comments from '../ResponseCard/ResponseCard';
 import { connect } from 'react-redux';
 
@@ -8,11 +8,16 @@ class showModal extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      modal: false
+      modal: false,
+      currentComment: ""
     };
 
     this.toggle = this.toggle.bind(this);
+    this.handleCommentOnChange = this.handleCommentOnChange.bind(this);
+    this.handlePostResponse = this.handlePostResponse.bind(this);
   }
+
+  nameRef = React.createRef();
 
   toggle() {
     this.setState({
@@ -20,19 +25,30 @@ class showModal extends React.Component {
     });
   }
 
-  postResponse = () => {
-    let data = {
-      percentageRating: 0,
-      userId: localStorage.getItem("userId"),
-      comment,
-      image,
-      video,
-      type,
-      show,
-      dislikes:1,
-      likes:1,
-      views: 0
+  handleCommentOnChange(e){
+    this.setState({
+      currentComment: e.target.value
+    })
   }
+
+  handlePostResponse() {
+    console.log(this.state.currentComment)
+      let data = {
+        percentageRating: 0,
+        userId: "",
+        comment: this.state.currentComment,
+        image: this.props.image,
+        video: "",
+        type: "",
+        show: this.props.buttonLabel,
+        dislikes:1,
+        likes:1,
+        decorations: true,
+        views: 0
+    }
+
+    // console.log(data)
+    this.props.responseFn.postResponse(data);
   }
 
   render() {
@@ -52,21 +68,30 @@ class showModal extends React.Component {
             </div>
             <div className="row">
               <div className="col-sm-10 comments">
-            
+                {this.props.responses.map(response => {
+                  console.log('modal')
+                  console.log(response)
+                  return(
+                    <div>
+                    <Comments id = {response.id} rating = {response.percentageRating} comments={response.comment}/>
+                    </div>
+                  )
+                })}
               </div>
             </div>
-          </ModalBody>
-          {this.props.responses.map(response => {
-            console.log('modal')
-            console.log(response)
-            return(
-              <div>
-              <Comments id = {response.id} rating = {response.percentageRating} comments={response.comment}/>
-              </div>
-            )
-          })}
+                <div>
+                      <InputGroup>
+              <InputGroupAddon addonType="prepend">@</InputGroupAddon>
+              <Input
+                type="textarea"                
+                placeholder="Share your thought ..." 
+                value={this.state.inputValue} 
+                onChange={evt => this.handleCommentOnChange(evt)} />
+            </InputGroup>
+                </div>
+          </ModalBody>          
           <ModalFooter>
-            <Button color="primary" onClick={this.toggle}>
+            <Button color="primary" onClick={this.handlePostResponse}>
               Comment
             </Button>
             <Button color="secondary" onClick={this.toggle}>

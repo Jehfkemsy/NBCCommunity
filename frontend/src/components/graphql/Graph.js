@@ -47,7 +47,7 @@ class GQL extends Component {
     return (
       <Query
         query={GET_SHOWS}
-        variables={{ number: 25, network: 'telemundocms' }}
+        variables={{ number: 1, network: 'telemundocms' }}
       >
         {({ loading, error, data }) => {
           if (loading) return 'Loading...';
@@ -55,7 +55,8 @@ class GQL extends Component {
 
           //REDUX THIS THING PLEASE DATA SHOULD BE PASSED TO ACTION IF IT IS TO WORK
           //data
-          console.log(data);
+          // console.log(data.shows.data);
+          this.props.contentFn.getContents(data.shows.data);
           return <React.Fragment />;
         }}
       </Query>

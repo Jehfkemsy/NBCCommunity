@@ -99,6 +99,7 @@ const showInitState = {
   function ContentR(state = showInitState, action) {
     switch (action.type) {
       case "GET_CONTENT": 
+        // console.log(action.data)
         return { ...state, 
           contents: action.data                  
         };

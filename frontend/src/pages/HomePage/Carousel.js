@@ -130,10 +130,10 @@ class Caro extends Component {
     ];
     // let data = [this.props.te]
     console.log('Data');
-    console.log(data);
+    console.log(this.props.contents);
     return (
       <div>
-        {this.props.contents.map(channel => {
+        {/* {this.props.contents.map(channel => {
           return (
             <div className="scrolling-wrapper">
               <h1>{channel[0].description}</h1>
@@ -142,7 +142,7 @@ class Caro extends Component {
               })}
             </div>
           );
-        })}
+        })} */}
       </div>
     );
   }

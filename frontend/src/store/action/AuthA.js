@@ -31,7 +31,7 @@ const AuthA = dispatch => {
         .then(res => {
           localStorage.setItem("user", data.email);
           localStorage.setItem("token", res.data.id);
-          localStorage.setItem("userId", res.data.userId);
+          // localStorage.setItem("userId", res.data.userId);
           dispatch({ type: "LOGIN" });
         })
         .catch(err => {

@@ -6,11 +6,7 @@ const responseInitState = {
     switch (action.type) {
       case "GET_RESPONSE": 
         return { ...state, 
-<<<<<<< Updated upstream
-          response: action.data
-=======
           response: action.data      
->>>>>>> Stashed changes
         };
       default:
         return state;

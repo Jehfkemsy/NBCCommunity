@@ -8,24 +8,20 @@ import { createStore, compose, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 import RootR from './store/reducer/RootR';
-import ApolloClient from "apollo-boost";
-import {ApolloProvider} from 'react-apollo';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const store = createStore(RootR, composeEnhancer(applyMiddleware(thunk)));
 
-const client = new ApolloClient({
-  uri: "https://w5xlvm3vzz.lp.gql.zone/graphql"
-});
+
 
 ReactDOM.render(
-  <ApolloProvider client={client}>
-    <Provider store={store}>
-      <App />
-    </Provider>
-  </ApolloProvider>,
+  
+  <Provider store={store}>
+    <App />
+  </Provider>,
+ 
   document.getElementById('root')
 );
 

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import ShowCard from './../../components/ShowCard/ShowCard'
-import ContentA from './../../store/action/ContentA'
+import ResponseA from './../../store/action/ResponseA';
+import ResponseCards from './../../components/ResponseCard/ResponseCard';
 
 /**
  * Description:
@@ -21,13 +21,14 @@ class ShowPage extends Component {
     console.log(this.props.match.params.id);
   }
 
-  
-
+  componentWillMount(){
+    this.props.responseFn.getResponses();
+  }
 
   render() {
     return (
       <div>
-        <h1>ShowPage</h1>
+        <ResponseCards />
       </div>
     );
   }
@@ -41,7 +42,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    contentFn : ContentA(dispatch)
+    responseFn: ResponseA(dispatch)
   };
 };
 

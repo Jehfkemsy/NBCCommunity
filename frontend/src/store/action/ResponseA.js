@@ -5,8 +5,8 @@ const ResponseA = (dispatch) => {
         getResponses: () => {
             axios.get(process.env.REACT_APP_RESPONSE_URL)
             .then(res => {     
-                console.log(res)          
-                dispatch({type:"GET_RESPONSE", data: res})
+                console.log(res.data)          
+                dispatch({type:"GET_RESPONSE", data: res.ata})
             })
             .catch(err => {
                 console.log(err)

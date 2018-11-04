@@ -1,12 +1,12 @@
 const responseInitState = {
-    response: []
+    responses: []
   };
   
   function ResponseR(state = responseInitState, action) {
     switch (action.type) {
       case "GET_RESPONSE": 
         return { ...state, 
-          response: action.data      
+          responses: action.data      
         };
       default:
         return state;

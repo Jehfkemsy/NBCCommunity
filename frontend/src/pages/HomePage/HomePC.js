@@ -3,6 +3,8 @@ import { connect } from "react-redux";
 import ShowCard from './../../components/ShowCard/ShowCard';
 import ContentA from './../../store/action/ContentA';
 import ResponseA from './../../store/action/ResponseA';
+import ResponseCards from './../../components/ResponseCard/ResponseCard';
+
 import Hero from './Hero';
 import {Container} from 'reactstrap';
 import './style.css';
@@ -47,6 +49,7 @@ const mapDispatchToProps = dispatch => {
   return {
     contentFn : ContentA(dispatch),
     responseFn: ResponseA(dispatch)
+    
   };
 };
 

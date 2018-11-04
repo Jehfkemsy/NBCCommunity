@@ -1,6 +1,8 @@
 import React from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter,InputGroup, InputGroupAddon, Input  } from 'reactstrap';
 import Comments from '../ResponseCard/ResponseCard';
+import './Modal.css';
+import ResizeReact from 'react-resize-image';
 
 class showModal extends React.Component {
   constructor(props) {
@@ -29,7 +31,7 @@ class showModal extends React.Component {
           <ModalBody>
             <div className="row">
               <div className="col-md-6">
-                <img className="img-fluid" src={this.props.image} alt="" />
+                <img className="img-fluid " alt="Responsive image" src={this.props.image} alt="" />
               </div>
               <div className="col-md-6">{this.props.buttonLabel}</div>
             </div>
@@ -49,7 +51,7 @@ class showModal extends React.Component {
                 <div>
                       <InputGroup>
               <InputGroupAddon addonType="prepend">@</InputGroupAddon>
-              <Input placeholder="username" />
+              <Input placeholder="username " />
             </InputGroup>
                 </div>
           </ModalBody>          

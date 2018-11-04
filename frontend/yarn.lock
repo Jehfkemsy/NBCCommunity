@@ -1683,7 +1683,7 @@ babel-register@^6.26.0:
     mkdirp "^0.5.1"
     source-map-support "^0.4.15"
 
-babel-runtime@^6.22.0, babel-runtime@^6.26.0:
+babel-runtime@^6.22.0, babel-runtime@^6.26.0, babel-runtime@^6.6.1:
   version "6.26.0"
   resolved "https://registry.yarnpkg.com/babel-runtime/-/babel-runtime-6.26.0.tgz#965c7058668e82b55d7bfe04ff2337bc8b5647fe"
   integrity sha1-llxwWGaOgrVde/4E/yM3vItWR/4=
@@ -8105,6 +8105,14 @@ react-redux@^5.1.0:
     prop-types "^15.6.1"
     react-is "^16.6.0"
     react-lifecycles-compat "^3.0.0"
+
+react-resize-image@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/react-resize-image/-/react-resize-image-1.0.4.tgz#e09958d0d7c757513d102295350abf40072a754c"
+  integrity sha1-4JlY0NfHV1E9ECKVNQq/QAcqdUw=
+  dependencies:
+    babel-runtime "^6.6.1"
+    prop-types "^15.5.8"
 
 react-responsive-carousel@^3.1.43:
   version "3.1.43"

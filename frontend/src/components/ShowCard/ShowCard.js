@@ -8,8 +8,17 @@ import { Card, CardImg } from 'reactstrap';
 import PropTypes from 'prop-types';
 // import { Animated } from 'react-animated-css';
 import ShowModal from './Modal';
+import ResizeImage from 'react-resize-image';
 
 const MediaCard = ({ image, title, description, responses }) => {
+
+  // tempImage = 
+  //   <ResizeImage
+  //       src= {image}
+  //       options={{ width: 20 }}
+  //       />;
+  
+
   return (
     <Card style={cardStyle}>
       <div className="card-details d-inline-block">
@@ -18,7 +27,7 @@ const MediaCard = ({ image, title, description, responses }) => {
           <h1>{title}</h1>
           <p>{description}</p>
         </div>
-        <CardImg width="100%" height="100%" src={image} />
+        <CardImg  height="100%" src={image} />
         
       </div>
     </Card>

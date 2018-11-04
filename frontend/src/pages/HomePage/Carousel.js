@@ -40,7 +40,7 @@ class Caro extends Component {
     console.log('Data');
     return (
       <div>
-      {this.props.contents.map(channel => {
+      {/* {this.props.contents.map(channel => {
         return(
           <div className="scrolling-wrapper">
           <h1>{channel[0].description}</h1>
@@ -60,7 +60,7 @@ class Caro extends Component {
             })}
           </div>
         )
-      })}
+      })} */}
       </div>
     );
   }

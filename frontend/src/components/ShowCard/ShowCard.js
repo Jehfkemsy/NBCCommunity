@@ -70,8 +70,7 @@ const cardStyle = {
   marginTop: 10,
   marginLeft: 30,
   marginBottom: 50,
-  height: '100%',
-  width: '27%',
+  
   boxShadow: '1px 3px 1px',
   borderRadius: 10
 };

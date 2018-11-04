@@ -3,15 +3,18 @@ Full cards to display the shows
     * on mouse peak, shows title, and description 
     * on click onpen show page 
 */
-import React, { Component, router } from 'react';
+import React from 'react';
 import { Card, CardImg } from 'reactstrap';
 import PropTypes from 'prop-types';
+// import { Animated } from 'react-animated-css';
+import ShowModal from './Modal';
 
 const MediaCard = ({ image, title, description }) => {
   return (
     <Card style={cardStyle}>
       <div className="card-details d-inline-block">
         <div className="cards-text">
+          <ShowModal buttonLabel={title} image={image} userName="test" />
           <h1>{title}</h1>
           <p>{description}</p>
         </div>

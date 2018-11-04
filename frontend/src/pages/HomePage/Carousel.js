@@ -30,7 +30,7 @@ class Caro extends Component {
           image: '',
           description: ''
         }
-      ]``
+      ]
     ],
     telemundoLoaded: false,
     syfyLoaded: false,

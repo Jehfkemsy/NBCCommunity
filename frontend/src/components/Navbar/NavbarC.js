@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import AuthA from './../../store/action/AuthA';
 
 import { connect } from 'react-redux';
-import GQL from '../graphql/Graph';
 import PropTypes from 'prop-types';
 
 class NavbarC extends Component {

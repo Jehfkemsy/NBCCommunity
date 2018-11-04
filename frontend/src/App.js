@@ -9,7 +9,6 @@ import ShowPage from './pages/ShowPage/ShowPage';
 import { ApolloProvider } from 'react-apollo';
 import ApolloClient from 'apollo-boost';
 import ShowPage from './pages/ShowPage/ShowPage';
-import GQL from './components/graphql/Graph';
 
 const client = new ApolloClient({
   uri: 'https://xyabwrrxxk.execute-api.us-east-1.amazonaws.com/stage',
@@ -23,7 +22,6 @@ class App extends Component {
     };
     return (
       <ApolloProvider client={client}>
-        <GQL />
         <BrowserRouter>
           <div className="App">
             <NavbarC />

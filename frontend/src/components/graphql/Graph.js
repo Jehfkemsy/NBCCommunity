@@ -55,8 +55,9 @@ class GQL extends Component {
 
           //REDUX THIS THING PLEASE DATA SHOULD BE PASSED TO ACTION IF IT IS TO WORK
           //data
-          // console.log(data.shows.data);
-          this.props.contentFn.getContents(data.shows.data);
+          console.log("Inside GQL")
+          console.log(data.shows.data);
+          this.props.contentFn.getTelemundo(data.shows.data);
           return <React.Fragment />;
         }}
       </Query>

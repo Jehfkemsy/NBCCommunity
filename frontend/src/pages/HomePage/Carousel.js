@@ -9,6 +9,19 @@ import ShowCard from './../../components/ShowCard/ShowCard';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
 class Caro extends Component {
+  state = {
+    contents: []
+  }
+
+  componentDidUpdate(prevProp,prevState) {
+    if(prevProp.telemundoShows !== this.props.telemundoShows)
+    {
+      let tmp = [this.props.telemundoShows,this.props.syfyShows,this.props.usaShows]
+      this.setState({contents: tmp})
+      console.log("tmp: ", tmp)
+    }    
+  }
+
   render() {
     const responses = [{}];
 
@@ -129,8 +142,8 @@ class Caro extends Component {
       ]
     ];
     // let data = [this.props.te]
-    console.log('Data');
-    console.log(this.props.contents);
+    console.log('Telemundo Data');
+    console.log(this.props.telemundoShows);
     return (
       <div>
         {/* {this.props.contents.map(channel => {
@@ -150,7 +163,9 @@ class Caro extends Component {
 
 const mapStateToProps = state => {
   return {
-    contents: state.ContentR.contents,
+    telemundoShows: state.ContentR.telemundoShows,
+    syfyShows: state.ContentR.syfyShows,
+    usaShows: state.ContentR.usaShows,
     responses: state.ResponseR.responses
   };
 };

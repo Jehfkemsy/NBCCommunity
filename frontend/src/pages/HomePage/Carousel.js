@@ -19,7 +19,19 @@ class Caro extends Component {
       let tmp = [this.props.telemundoShows,this.props.syfyShows,this.props.usaShows]
       this.setState({contents: tmp})
       console.log("tmp: ", tmp)
+    }   
+    if(prevProp.syfyShows !== this.props.syfyShows)
+    {
+      let tmp = [this.props.telemundoShows,this.props.syfyShows,this.props.usaShows]
+      this.setState({contents: tmp})
+      console.log("tmp: ", tmp)
     }    
+    if(prevProp.usaShows !== this.props.usaShows)
+    {
+      let tmp = [this.props.telemundoShows,this.props.syfyShows,this.props.usaShows]
+      this.setState({contents: tmp})
+      console.log("tmp: ", tmp)
+    } 
   }
 
   render() {

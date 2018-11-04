@@ -19,11 +19,11 @@
 }
 
 li {
-  margin: 0 3rem;
+  margin: 10 3rem;
 }
 
 .card:hover .cards-text {
-  opacity: 1;
+  opacity: 20;
   top: 0;
 }
 

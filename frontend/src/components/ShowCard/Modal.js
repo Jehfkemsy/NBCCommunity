@@ -44,7 +44,7 @@ class showModal extends React.Component {
             console.log(response)
             return(
               <div>
-              <Comments comments={response.comment}/>
+              <Comments id = {response.id} rating = {response.percentageRating} comments={response.comment}/>
               </div>
             )
           })}

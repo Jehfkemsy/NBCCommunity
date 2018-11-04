@@ -4,7 +4,6 @@ import NavbarC from './components/Navbar/NavbarC';
 import HomePC from './pages/HomePage/HomePC';
 import landingP from './pages/LandingPage/LandingP';
 import './App.css';
-import ResponseCard from './components/ResponseCard/ResponseCard';
 import ShowPage from './pages/ShowPage/ShowPage';
 
 class App extends Component {
@@ -16,8 +15,7 @@ class App extends Component {
       <div>
         <BrowserRouter>
           <div className="App">
-            <NavbarC />
-            <ResponseCard />
+            <NavbarC />            
             <div style={margin}>
               <Switch>
                 <Route exact path="/" component={landingP} />
